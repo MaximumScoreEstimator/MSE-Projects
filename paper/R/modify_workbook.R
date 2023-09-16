@@ -1,3 +1,5 @@
+#
+
 library(maxscoreest)
 
 shiftPayoffMatrices <- function(payoffMatrices) {
