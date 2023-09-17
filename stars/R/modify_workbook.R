@@ -1,4 +1,18 @@
-#
+# Companion code for the paper "Stars In Their Constellations: Great person or great team?" 
+# by Mindruta, Bercovitz, Mares, and Feldman.
+# 
+# This code generates the contribution intervals (max and min) of an agent in a match
+# The code reads two pieces of information
+# First, the code requies a data input file containing 
+# a) the index of matching markets (1 to 33)
+# b) the market-specific indices of upstream (PIs) and downstream (constellations) agents in each market (2 columns)
+# c) the matching covariates 
+# d) a variable taking the value of 1 for matched agents in a market (and 0 otherwise)
+# e) two additional variables taking value of 1 (and 0 otherwise) for the upstream and downstream agents that need to be removed
+# Second, the code requires the list of point estimates of the matching function. 
+# Here, we use the estimates produced in Mathematica: see Table 2a in the paper.
+# Users can apply the code to their input data, but need to follow the same data file format.
+# The input file should always be sorted by marketid, upstreamid, downstreamid. The code does not support missing data.
 
 library(maxscoreest)
 
@@ -26,18 +40,27 @@ modifyR <- function(uIdxs, dIdxs, payoffMatrix, quotaU, quotaD) {
 # Maybe use the unexported developer functions.
 # TODO: Use read.table?
 # TODO: Allow user to pass extra args to reader functions in importMatched, etc.
-ifname <- "~/Documents/Work/MSE-R/modifydata/stars2022final_remove.dat"
+
+ifname <- "~/Documents/Work/MSE-R/modifydata/stars_replication_remove.dat"
+
+# @P: add a short descriptino of the precomputed file. Warn the user the file will be generated and saved each time the code runs
+
 ofname <- "~/Documents/Work/MSE-R/modifydata/precomputed.dat"
+
+# @P Warn the user that reading input data is file-specific. Numbers below will change depending on the number of columns
+
 inputData <- read.csv(ifname, header = TRUE, sep = "\t")
 outputData <- inputData[1:11]
 removeData <- inputData[c(1:3, 11:13)]
 write.table(outputData, file = ofname, sep = "\t", quote = FALSE, row.names = FALSE)
 matchedData <- importMatched(ofname)
+#@P cmarket is also file specific. The current name is "marketid". The agent indices are called "upstreamid" "downstreamid"
 removeu <- unique(removeData[removeData$removeup == 1, c("cmarket", "cid_u")])
 removed <- unique(removeData[removeData$removedown == 1, c("cmarket", "cid_d")])
 removes <- removeData[, c("removeup", "removedown")]
 ineqmembers <- Cineqmembers(matchedData$mate)
 dataArray <- CdataArray(matchedData$distanceMatrices, ineqmembers)
+# Input point estimates of the matching function below
 pointEstimate <- c(
     4.981905468469215,
     -2.4016513033944378,
@@ -162,9 +185,20 @@ for (i in seq_along(idxs)) {
     colName <- sprintf("{%s, %d, %d}", colDescription$stream, colDescription$mIdx, colDescription$dIdx)
     v2[colName] <- col
 }
+
+# The code exports 3 files: ".removeu.originalmatch.dat" ".removed.originalmatch.dat" ".all.dat"
+# The first two files keep only the agents in the market for which we calculated the contribution intervals
+# These files have been used in the paper to generate the summary statistics reported in Table 3a
+# The code also allows exporting a file (".all.dat") that contains all agents in a market (see section 5.3 of the paper)
+# This file contains additional columns that mark down "who matches with whom" after an agent is removed from the market. 
+# For example, the column called "{U, 33, 6}" takes the value of 1 
+# for matches that are formed in market 33 after upstream 6 was "removed" from the market (i.e. its quota was set to zero) 
+# The column called "{D, 33, 2}" takes the value of 1 for all matches formed in market 33 after downstream 2 was "removed" 
+
+
 ofPrefix <- file.path(dirname(ifname), paste("modifyR-output-", basename(ifname), sep = ""))
-ofnamev1u <- paste(ofPrefix, ".removeu1.originalmatch1.dat", sep = "")
-ofnamev1d <- paste(ofPrefix, ".removed1.originalmatch1.dat", sep = "")
+ofnamev1u <- paste(ofPrefix, ".removeu.originalmatch.dat", sep = "")
+ofnamev1d <- paste(ofPrefix, ".removed.originalmatch.dat", sep = "")
 ofnamev2 <- paste(ofPrefix, ".all.dat", sep = "")
 # write.table(v1u, file = ofnamev1u, sep = "\t", quote = FALSE, row.names = FALSE)
 fwrite(v1u, file = ofnamev1u, sep = "\t", quote = FALSE, row.names = FALSE)
