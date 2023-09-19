@@ -60,14 +60,17 @@ exportMIdx <- 33
 ################################################################################
 # Function definitions.
 
-#'* Shift payoff matrices to zero
-# This part of the code executes an affine transformation on the payoff matrix 
-# (the matrix that contains the payoffs of all real and counterfactual matches). 
-# This procedure does not interfere with the calculation of max and min, but speeds up the execution. 
-
-# * Transform each payoff matrix by subtracting from each element the minimal
-#  entry of that matrix (called "offset"). The new payoff matrices have minimal value equal to zero
-# * Return the shifted payoff matrices and the calculated offsets.
+#' Shift payoff matrices to zero
+#'
+#' Transform each payoff matrix by subtracting from each element the minimal
+#' entry of that matrix (called "offset"). The new payoff matrices have minimal
+#' value equal to zero Return the shifted payoff matrices and the calculated
+#' offsets.
+#'
+#' This part of the code executes an affine transformation on the payoff matrix
+#' (the matrix that contains the payoffs of all real and counterfactual
+#' matches). This procedure does not interfere with the calculation of max and
+#' min, but speeds up the execution. 
 #'
 #' @param payoffMatrices A list of payoff matrices, one for each market.
 #' @return A list with members:
