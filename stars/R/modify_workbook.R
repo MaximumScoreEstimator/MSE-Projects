@@ -44,7 +44,6 @@ ifname <- "../data/stars_replication_step2.dat"
 # The optimal parameters.
 # Attention, for reproducibility reasons, we provide the estimates obtained in Mathematica
 
-"remove" operations
 pointEstimate <- c(
     4.981905468469215,
     -2.4016513033944378,
