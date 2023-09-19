@@ -31,17 +31,17 @@ library(maxscoreest)
 # * Each market/upstream/downstream triple should appear only once. These
 #   indices should have sorted and consecutive values, starting from `1`.
 # * The last three columns specify whether this triple is a match, and whether
-#   this upstream or downstream should be unmatched. These fields take values
-#   `0` or `1`.
+#   this upstream or downstream should be unmatched. 
+#   These fields take values `0` or `1`.
 # * Each of the remaining columns in the middle corresponds to a matching covariate.
 #   Fields on these columns should be numerical.
-#   The input file should always be sorted by marketid, upstreamid, downstreamid. 
+#  *The input file should always be sorted by marketid, upstreamid, downstreamid. 
 #   Note that the actual header names are not taken into account.
 
 # Path to the input file.
 ifname <- "../data/stars_replication_step2.dat"
 
-# The optimal parameters.
+# * The optimal parameters *
 # Attention, for reproducibility reasons, we provide the estimates obtained in Mathematica
 
 pointEstimate <- c(
@@ -60,14 +60,14 @@ exportMIdx <- 33
 ################################################################################
 # Function definitions.
 
-#' Shift payoff matrices to zero
-# This step executes an affine transformation on the payoff matrix 
+#'* Shift payoff matrices to zero
+# This part of the code executes an affine transformation on the payoff matrix 
 # (the matrix that contains the payoffs of all real and counterfactual matches). 
-# The step does not interfere with the calculation of max and min, but speads up the execution. 
+# This procedure does not interfere with the calculation of max and min, but speeds up the execution. 
 
-#' Transform each payoff matrix by subtracting from each element the minimal
-#' entry of that matrix (called "offset"). The new payoff matrices have minimal value equal to
-#' zero. Return the shifted payoff matrices and the calculated offsets.
+# * Transform each payoff matrix by subtracting from each element the minimal
+#  entry of that matrix (called "offset"). The new payoff matrices have minimal value equal to zero
+# * Return the shifted payoff matrices and the calculated offsets.
 #'
 #' @param payoffMatrices A list of payoff matrices, one for each market.
 #' @return A list with members:
@@ -92,7 +92,7 @@ shiftPayoffMatrices <- function(payoffMatrices) {
 #'
 #' Unmatch the given upstreams and downstreams by setting their respective
 #' quotas to zero. These agents cannot participate in matches. After unmatching,
-#' calculate the new optimal matches, given the original payoff matrix.
+#' calculate the new optimal matches in each market, given the original payoff matrix.
 #'
 #' @param uIdxs A vector of upstream indices to be unmatched.
 #' @param dIdxs A vector of downstream indices to be unmatched.
