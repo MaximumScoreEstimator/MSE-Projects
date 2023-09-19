@@ -1,33 +1,103 @@
-# Companion code for the paper "Stars In Their Constellations: Great person or great team?" 
+# Companion code for the paper "Stars In Their Constellations: Great person or great team?"
 # by Mindruta, Bercovitz, Mares, and Feldman.
-# 
+#
 # This code generates the contribution intervals (max and min) of an agent in a match
 # The code reads two pieces of information
-# First, the code requies a data input file containing 
+# First, the code requies a data input file containing
 # a) the index of matching markets (1 to 33)
 # b) the market-specific indices of upstream (PIs) and downstream (constellations) agents in each market (2 columns)
-# c) the matching covariates 
+# c) the matching covariates
 # d) a variable taking the value of 1 for matched agents in a market (and 0 otherwise)
 # e) two additional variables taking value of 1 (and 0 otherwise) for the upstream and downstream agents that need to be removed
-# Second, the code requires the list of point estimates of the matching function. 
+# Second, the code requires the list of point estimates of the matching function.
 # Here, we use the estimates produced in Mathematica: see Table 2a in the paper.
 # Users can apply the code to their input data, but need to follow the same data file format.
 # The input file should always be sorted by marketid, upstreamid, downstreamid. The code does not support missing data.
 
 library(maxscoreest)
 
+################################################################################
+# Inputs for the workbook.
+# Can be replaced by the user.
+
+# The input file must be a delimiter-separated file with a header, and must
+# have the same structure as described in the `maxscoreest::importMatched`
+# function, but with two additional columns at the end, Fields on these columns
+# take values `0` or `1`, depending on whether the corresponding row has to be
+# unmatched.
+# More specifically:
+# * The first three columns specify the market index, the upstream index, and
+#   the downstream index, in this order, of the row.
+# * Each market/upstream/downstream triple should appear only once. These
+#   indices should have sorted and consecutive values, starting from `1`.
+# * The last three columns specify whether this triple is a match, and whether
+#   this upstream or downstream should be unmatched. These fields take values
+#   `0` or `1`.
+# * Each of the remaining columns in the middle corresponds to an attribute.
+#   Fields on these columns contain distance values, and should be numerical.
+# Note that the actual header names are not taken into account.
+
+# Path to the input file.
+ifname <- "../data/stars_replication_step2.dat"
+# The optimal parameters. Instead of calculating the parameters using the
+# `maxscoreest` library, we provide a pre-calculated value.
+pointEstimate <- c(
+    4.981905468469215,
+    -2.4016513033944378,
+    0.06642024971697014,
+    1.2889501155821126,
+    1.3983116175519597,
+    2.76088191399337)
+# The index of the market to be exported.
+exportMIdx <- 33
+
+################################################################################
+
+################################################################################
+# Function definitions.
+
+#' Shift payoff matrices to zero
+#'
+#' Transform each payoff matrix by subtracting from each element the minimal
+#' entry of that matrix. The new payoff matrices have minimal value equal to
+#' zero. Return the shifted payoff matrices and the calculated offsets.
+#'
+#' @param payoffMatrices A list of payoff matrices, one for each market.
+#' @return A list with members:
+#' \tabular{ll}{
+#'   `$payoffMatrices` \tab The shifted payoff matrices, as a list. \cr
+#'   `$offsets` \tab The offsets, as a list.
+#' }
 shiftPayoffMatrices <- function(payoffMatrices) {
     results <- lapply(
         payoffMatrices,
         function(payoffMatrix) {
             payoffMin <- min(payoffMatrix)
-            return(list(payoffMatrix = payoffMatrix - payoffMin, offset = payoffMin))
+            return(list(
+                payoffMatrix = payoffMatrix - payoffMin, offset = payoffMin))
         })
     newPayoffMatrices <- lapply(results, "[[", "payoffMatrix")
     offsets <- lapply(results, "[[", "offset")
     return(list(payoffMatrices = newPayoffMatrices, offsets = unlist(offsets)))
 }
 
+#' Modify market data by unmatching and rematching
+#'
+#' Unmatch the given upstreams and downstreams by setting their respective
+#' quotas to zero. These agents cannot participate in matches. After unmatching,
+#' calculate the new optimal matches, given the original payoff matrix.
+#'
+#' @param uIdxs A vector of upstream indices to be unmatched.
+#' @param dIdxs A vector of downstream indices to be unmatched.
+#' @param payoffMatrix The payoff matrix of the market.
+#' @param quotaU The vector of quotas for the upstreams.
+#' @param quotaD The vector of quotas for the downstreams.
+#' @return A list with members:
+#' \tabular{ll}{
+#'   `$matchMatrix` \tab The match matrix after rematching. \cr
+#'   `$quotaU` \tab The vector of upstream quotas after unmatching. \cr
+#'   `$quotaD` \tab The vector of downstream quotas after unmatching.
+#' }
 modifyR <- function(uIdxs, dIdxs, payoffMatrix, quotaU, quotaD) {
     quotaU[uIdxs] <- 0
     quotaD[dIdxs] <- 0
@@ -36,171 +106,248 @@ modifyR <- function(uIdxs, dIdxs, payoffMatrix, quotaU, quotaD) {
         matchMatrix = matchMatrix, quotaU = quotaU, quotaD = quotaD))
 }
 
-# TODO: Let importMatched take an already imported data.table as input.
-# Maybe use the unexported developer functions.
-# TODO: Use read.table?
-# TODO: Allow user to pass extra args to reader functions in importMatched, etc.
+################################################################################
 
-ifname <- "~/Documents/Work/MSE-R/modifydata/stars_replication_remove.dat"
+################################################################################
+# Create output paths.
+# Output files are created in the same directory as the input file.
 
-# @P: add a short descriptino of the precomputed file. Warn the user the file will be generated and saved each time the code runs
+# `precomputed.dat` is created by removing the last two columns from the input
+# file. This file is generated each time this code runs. Note that this is not
+# an output file, but a helper file for the rest of the procedure, and it safe
+# to ignore.
 
-ofname <- "~/Documents/Work/MSE-R/modifydata/precomputed.dat"
+ofname <- file.path(dirname(ifname), "precomputed.dat")
+ofPrefix <- file.path(
+    dirname(ifname), paste("modifyR-output-", basename(ifname), sep = ""))
+ofnamev1u <- paste(ofPrefix, ".removeu.originalmatch.dat", sep = "")
+ofnamev1d <- paste(ofPrefix, ".removed.originalmatch.dat", sep = "")
+ofnamev2 <- paste(ofPrefix, ".all.dat", sep = "")
 
-# @P Warn the user that reading input data is file-specific. Numbers below will change depending on the number of columns
+################################################################################
+
+################################################################################
+# Extract precomputed and removal data.
+# See section "Inputs for the workbook" for information on the structure of the
+# input file.
 
 inputData <- read.csv(ifname, header = TRUE, sep = "\t")
-outputData <- inputData[1:11]
-removeData <- inputData[c(1:3, 11:13)]
-write.table(outputData, file = ofname, sep = "\t", quote = FALSE, row.names = FALSE)
+numInputCols <- length(colnames(inputData))
+outputData <- inputData[1:(numInputCols - 2)]
+removeData <- inputData[c(1:3, (numInputCols - 2):numInputCols)]
+write.table(
+    outputData, file = ofname, sep = "\t", quote = FALSE, row.names = FALSE)
+
+marketColName <- colnames(removeData)[1]
+upstreamColName <- colnames(removeData)[2]
+downstreamColName <- colnames(removeData)[3]
+removeupColName <- colnames(removeData)[5]
+removedownColName <- colnames(removeData)[6]
+# `removeu` is a table of pairs of market and upstream indices to be unmatched.
+# `removed` is similar, but for downstreams.
+removeu <- unique(removeData[
+    removeData[[removeupColName]] == 1,
+    c(marketColName, upstreamColName)])
+removed <- unique(removeData[
+    removeData[[removedownColName]] == 1,
+    c(marketColName, downstreamColName)])
+removes <- removeData[, c(removeupColName, removedownColName)]
+
+################################################################################
+
+################################################################################
+# Calculate associated data (match and payoff matrices, quotas, and total
+# payoffs). Shift payoff matrices to zero minimum.
+# See the `maxscoreest` documentation for more information on their format.
 matchedData <- importMatched(ofname)
-#@P cmarket is also file specific. The current name is "marketid". The agent indices are called "upstreamid" "downstreamid"
-removeu <- unique(removeData[removeData$removeup == 1, c("cmarket", "cid_u")])
-removed <- unique(removeData[removeData$removedown == 1, c("cmarket", "cid_d")])
-removes <- removeData[, c("removeup", "removedown")]
 ineqmembers <- Cineqmembers(matchedData$mate)
 dataArray <- CdataArray(matchedData$distanceMatrices, ineqmembers)
-# Input point estimates of the matching function below
-pointEstimate <- c(
-    4.981905468469215,
-    -2.4016513033944378,
-    0.06642024971697014,
-    1.2889501155821126,
-    1.3983116175519597,
-    2.76088191399337)
-obj <- makeScoreObjFun(dataArray, 1, 1)
-print(obj(pointEstimate) * dim(dataArray)[2])
-payoffMatrices <- evaluatePayoffMatrices(matchedData$distanceMatrices, pointEstimate)
+payoffMatrices <- evaluatePayoffMatrices(
+    matchedData$distanceMatrices, pointEstimate)
 shiftResults <- shiftPayoffMatrices(payoffMatrices)
-payoffMatricesOld <- payoffMatrices
 payoffMatrices <- shiftResults$payoffMatrices
 quotasU <- lapply(matchedData$matchMatrices, colSums)
 quotasD <- lapply(matchedData$matchMatrices, rowSums)
-totalPayoffs <- mapply(function(m, p) { sum(m*p) }, matchedData$matchMatrices, payoffMatrices)
-umatchesHeader <- list()
-dmatchesHeader <- list()
-umatches <- list()
-dmatches <- list()
-ures1 <- list()
-dres1 <- list()
-for (i in seq_len(dim(removeu)[1])) {
-    mIdx <- removeu[i, "cmarket"]
-    uIdx <- removeu[i, "cid_u"]
-    modifyResult <- modifyR(c(uIdx), c(), payoffMatrices[[mIdx]], quotasU[[mIdx]], quotasD[[mIdx]])
-    col <- list(stream = "U", mIdx = mIdx, uIdx = uIdx)
-    newMatchMatrices <- matchedData$matchMatrices
-    newMatchMatrices[[mIdx]] <- modifyResult$matchMatrix
-    newTotalPayoff <- sum(modifyResult$matchMatrix * payoffMatrices[[mIdx]])
-    totalPayoffDiff <- totalPayoffs[mIdx] - newTotalPayoff
-    umatchesHeader <- append(umatchesHeader, list(col))
-    # umatches <- append(umatches, newMatchMatrices)
-    umatches <- append(umatches, list(modifyResult$matchMatrix))
-    out <- list(mIdx = mIdx, uIdx = uIdx, totalPayoffDiff = totalPayoffDiff)
-    ures1 <- append(ures1, list(out))
+# The total payoff of a market is calculated by summing the payoffs of those
+# upstream-downstream pairs that are matched.
+totalPayoffs <- mapply(
+    function(m, p) { sum(m*p) }, matchedData$matchMatrices, payoffMatrices)
+
+################################################################################
+
+################################################################################
+# Perform unmatchings and accumulate results.
+
+#' Unmatch and rematch all pairs
+#'
+#' Perform a modification for each row in the `removeu` or `removed` tables.
+#' When the upstream functionality is chosen, each modification unmatches only
+#' the single upstream described in the `removeu` row, and unmatches no
+#' downstreams. When the downstream functionality is chosen, each modification
+#' unmatches the single downstream described in the `removed` row, and unmatches
+#' no upstreams. In both cases, the new match matrix and the difference in total
+#' payoffs is recorded.
+#'
+#' @param stream `"U"` for upstreams, `"D"` for downstreams.
+#' @return A list with one element for each row of `removeu` or `removed`,
+#'   respectively. Each element is a list with members:
+#' \tabular{ll}{
+#'   `$stream` \tab The value of the `stream` parameter. \cr
+#'   `$mIdx` \tab The index of the market to be modified. \cr
+#'   `$uIdx` or `$dIdx` \tab The index of the upstream or downstream,
+#'     respectively, that is unmatched. \cr
+#'   `$matches` \tab The new match matrix, after rematching. \cr
+#'   `$totalPayoffDiff` \tab The difference in total payoffs before and after
+#'     rematching.
+#' }
+calcRemoveResults <- function(stream) {
+    stopifnot(stream == "U" || stream == "D")
+    removeTable <- if (stream == "U") removeu else removed
+    streamColName <- if (stream == "U") upstreamColName else downstreamColName
+    sIdxName <- if (stream == "U") "uIdx" else "dIdx"
+    lapply(seq_len(dim(removeTable)[1]), function(removeTableRowIdx) {
+        mIdx <- removeTable[removeTableRowIdx, marketColName]
+        sIdx <- removeTable[removeTableRowIdx, streamColName]
+        uIdxs <- if (stream == "U") c(sIdx) else c()
+        dIdxs <- if (stream == "U") c() else c(sIdx)
+        modifyResult <- modifyR(
+            uIdxs, dIdxs,
+            payoffMatrices[[mIdx]], quotasU[[mIdx]], quotasD[[mIdx]])
+        newTotalPayoff <- sum(modifyResult$matchMatrix * payoffMatrices[[mIdx]])
+        totalPayoffDiff <- totalPayoffs[mIdx] - newTotalPayoff
+        out <- list(
+            stream = stream, mIdx = mIdx, matches = modifyResult$matchMatrix,
+            totalPayoffDiff = totalPayoffDiff)
+        out[[sIdxName]] <- sIdx
+        return(out)
+    })
 }
-for (i in seq_len(dim(removed)[1])) {
-    mIdx <- removed[i, "cmarket"]
-    dIdx <- removed[i, "cid_d"]
-    modifyResult <- modifyR(c(), c(dIdx), payoffMatrices[[mIdx]], quotasU[[mIdx]], quotasD[[mIdx]])
-    col <- list(stream = "D", mIdx = mIdx, dIdx = dIdx)
-    newMatchMatrices <- matchedData$matchMatrices
-    newMatchMatrices[[mIdx]] <- modifyResult$matchMatrix
-    newTotalPayoff <- sum(modifyResult$matchMatrix * payoffMatrices[[mIdx]])
-    totalPayoffDiff <- totalPayoffs[mIdx] - newTotalPayoff
-    dmatchesHeader <- append(dmatchesHeader, list(col))
-    # dmatches <- append(dmatches, newMatchMatrices)
-    dmatches <- append(dmatches, list(modifyResult$matchMatrix))
-    out <- list(mIdx = mIdx, dIdx = dIdx, totalPayoffDiff = totalPayoffDiff)
-    dres1 <- append(dres1, list(out))
-}
-k <- 1
-v1 <- list() # maybe use a data.frame
+removeResultsU <- calcRemoveResults("U")
+removeResultsD <- calcRemoveResults("D")
+
+################################################################################
+
+################################################################################
+# Create output tables.
+# `v1` consists of one row for each input row, with entries for market,
+# upstream, and downstream indices, the triple's payoff value, and whether it
+# was originally matched. If that upstream or downstream was removed above,
+# there is extra information regarding the differences in total payoffs.
+# The last two columns are the same as in the input data.
+# From `v1` we select those rows that were originally matched and were then
+# removed, and we construct the tables `v1u` and `v1d`.
+# We finally construct `v2` by appending columns to `v1` corresponding to the
+# removed upstreams and downstreams from the chosen market (see `exportMIdx`).
+
+rowIdx <- 1
+v1 <- list()
 for (mIdx in seq_len(matchedData$noM)) {
     for (uIdx in seq_len(matchedData$noU[mIdx])) {
         for (dIdx in seq_len(matchedData$noD[mIdx])) {
             payoff <- payoffMatrices[[mIdx]][dIdx, uIdx]
             originalMatch <- matchedData$matchMatrices[[mIdx]][dIdx, uIdx]
             match <- matchedData$matchMatrices[[mIdx]][dIdx, uIdx]
-            idxs <- which(sapply(ures1, function(v) { v$mIdx == mIdx && v$uIdx == uIdx }))
-            urmax <- if (length(idxs) == 0) NA else ures1[[idxs[1]]]$totalPayoffDiff
-            # urmin <- if (length(idxs) == 0) NA else payoff - urmax
-            idxs <- which(sapply(dres1, function(v) { v$mIdx == mIdx && v$dIdx == dIdx }))
-            drmax <- if (length(idxs) == 0) NA else dres1[[idxs[1]]]$totalPayoffDiff
-            # drmin <- if (length(idxs) == 0) NA else payoff - drmax
+            # Check if that upstream was previously removed.
+            idxs <- which(sapply(
+                removeResultsU,
+                function(v) { v$mIdx == mIdx && v$uIdx == uIdx }))
+            urmax <- if (length(idxs) == 0) {
+                NA
+            } else {
+                removeResultsU[[idxs[1]]]$totalPayoffDiff
+            }
+            # Check if that downstream was previously removed.
+            idxs <- which(sapply(
+                removeResultsD,
+                function(v) { v$mIdx == mIdx && v$dIdx == dIdx }))
+            drmax <- if (length(idxs) == 0) {
+                NA
+            } else {
+                removeResultsD[[idxs[1]]]$totalPayoffDiff
+            }
             urmin <- max(0, payoff - drmax)
             drmin <- max(0, payoff - urmax)
             row <- list(
                 mIdx = mIdx, uIdx = uIdx, dIdx = dIdx,
                 payoff = payoff, originalMatch = originalMatch, match = match,
                 urmax = urmax, drmax = drmax, urmin = urmin, drmin = drmin,
-                removeU = removes[k, 1], removeD = removes[k, 2])
-            k <- k + 1
+                removeU = removes[rowIdx, 1], removeD = removes[rowIdx, 2])
+            rowIdx <- rowIdx + 1
             v1 <- append(v1, list(row))
         }
     }
 }
-v1 <- data.frame(do.call(rbind, v1))
+v1 <- data.frame(rbindlist(v1))
 colnames(v1)[1:3] <- matchedData$header[1:3]
 colnames(v1)[5:6] <- c("originalmatch", "storedmatch")
 v1u <- v1[v1$originalmatch == 1 & v1$removeU == 1, ]
 v1d <- v1[v1$originalmatch == 1 & v1$removeD == 1, ]
-# FIXME: Columns of v1 and v2 are lists, why?
-# TODO: Surround field names in header with quotes?
-# Create columns for v2
-exportMIdx <- 33
 v2 <- v1
-idxs <- which(sapply(umatchesHeader, function(x) { x$mIdx == exportMIdx }))
-for (i in seq_along(idxs)) {
-    idx <- idxs[i]
-    colDescription <- umatchesHeader[[idx]]
-    col <- integer(dim(v1)[1])
-    k <- 1
-    for (mIdx in seq_len(matchedData$noM)) {
-        matchMatrix <- if (mIdx == colDescription$mIdx) umatches[[idx]] else matchedData$matchMatrices[[mIdx]]
-        for (uIdx in seq_len(matchedData$noU[mIdx])) {
-            for (dIdx in seq_len(matchedData$noD[mIdx])) {
-                col[k] <- matchMatrix[dIdx, uIdx]
-                k <- k + 1
+
+#' Append columns to output table
+#'
+#' When the upstream functionality is chosen, the rows of `removeu` with
+#' market index equal to the chosen market index `exportMIdx` are selected. For
+#' each upstream index in those rows, a new column for `v2` is created. Each
+#' entry of that column is the value of the new match matrix, after rematching,
+#' for the corresponding market-upstream-downstream index. The column header is
+#' of the form `"{U, mIdx, uIdx}"`, where `mIdx` and `uIdx` are replaced by the
+#' market and upstream indices of the removed upstream. The procedure for the
+#' downstream functionality is similar.
+#'
+#' @param stream `"U"` for upstreams, `"D"` for downstreams.
+#' @return `NULL`
+appendColumns <- function(stream) {
+    stopifnot(stream == "U" || stream == "D")
+    removeResults <- if (stream == "U") removeResultsU else removeResultsD
+    sIdxName <- if (stream == "U") "uIdx" else "dIdx"
+    idxs <- which(sapply(removeResults, function(x) { x$mIdx == exportMIdx }))
+    lapply(idxs, function(idx) {
+        colDescription <- removeResults[[idx]][c("stream", "mIdx", sIdxName)]
+        col <- integer(dim(v1)[1])
+        rowIdx <- 1
+        for (mIdx in seq_len(matchedData$noM)) {
+            # The match matrix is only modified for the chosen market. For other
+            # markets we can retrieve the original match matrices.
+            matchMatrix <- if (mIdx == colDescription$mIdx) {
+                removeResults[[idx]]$matches
+            } else {
+                matchedData$matchMatrices[[mIdx]]
+            }
+            for (uIdx in seq_len(matchedData$noU[mIdx])) {
+                for (dIdx in seq_len(matchedData$noD[mIdx])) {
+                    col[rowIdx] <- matchMatrix[dIdx, uIdx]
+                    rowIdx <- rowIdx + 1
+                }
             }
         }
-    }
-    colName <- sprintf("{%s, %d, %d}", colDescription$stream, colDescription$mIdx, colDescription$uIdx)
-    v2[colName] <- col
+        colName <- sprintf(
+            "{%s, %d, %d}", colDescription$stream,
+            colDescription$mIdx, colDescription[[sIdxName]])
+        v2[colName] <<- col
+        return(NULL)
+    })
+    return(NULL)
 }
-idxs <- which(sapply(dmatchesHeader, function(x) { x$mIdx == exportMIdx }))
-for (i in seq_along(idxs)) {
-    idx <- idxs[i]
-    colDescription <- dmatchesHeader[[idx]]
-    col <- integer(dim(v1)[1])
-    k <- 1
-    for (mIdx in seq_len(matchedData$noM)) {
-        matchMatrix <- if (mIdx == colDescription$mIdx) dmatches[[idx]] else matchedData$matchMatrices[[mIdx]]
-        for (uIdx in seq_len(matchedData$noU[mIdx])) {
-            for (dIdx in seq_len(matchedData$noD[mIdx])) {
-                col[k] <- matchMatrix[dIdx, uIdx]
-                k <- k + 1
-            }
-        }
-    }
-    colName <- sprintf("{%s, %d, %d}", colDescription$stream, colDescription$mIdx, colDescription$dIdx)
-    v2[colName] <- col
-}
+appendColumns("U")
+appendColumns("D")
+
+################################################################################
+
+################################################################################
+# Write output tables.
 
 # The code exports 3 files: ".removeu.originalmatch.dat" ".removed.originalmatch.dat" ".all.dat"
 # The first two files keep only the agents in the market for which we calculated the contribution intervals
 # These files have been used in the paper to generate the summary statistics reported in Table 3a
 # The code also allows exporting a file (".all.dat") that contains all agents in a market (see section 5.3 of the paper)
-# This file contains additional columns that mark down "who matches with whom" after an agent is removed from the market. 
-# For example, the column called "{U, 33, 6}" takes the value of 1 
-# for matches that are formed in market 33 after upstream 6 was "removed" from the market (i.e. its quota was set to zero) 
-# The column called "{D, 33, 2}" takes the value of 1 for all matches formed in market 33 after downstream 2 was "removed" 
+# This file contains additional columns that mark down "who matches with whom" after an agent is removed from the market.
+# For example, the column called "{U, 33, 6}" takes the value of 1
+# for matches that are formed in market 33 after upstream 6 was "removed" from the market (i.e. its quota was set to zero)
+# The column called "{D, 33, 2}" takes the value of 1 for all matches formed in market 33 after downstream 2 was "removed"
 
-
-ofPrefix <- file.path(dirname(ifname), paste("modifyR-output-", basename(ifname), sep = ""))
-ofnamev1u <- paste(ofPrefix, ".removeu.originalmatch.dat", sep = "")
-ofnamev1d <- paste(ofPrefix, ".removed.originalmatch.dat", sep = "")
-ofnamev2 <- paste(ofPrefix, ".all.dat", sep = "")
-# write.table(v1u, file = ofnamev1u, sep = "\t", quote = FALSE, row.names = FALSE)
 fwrite(v1u, file = ofnamev1u, sep = "\t", quote = FALSE, row.names = FALSE)
 fwrite(v1d, file = ofnamev1d, sep = "\t", quote = FALSE, row.names = FALSE)
 fwrite(v2, file = ofnamev2, sep = "\t", quote = FALSE, row.names = FALSE)
+
+################################################################################
