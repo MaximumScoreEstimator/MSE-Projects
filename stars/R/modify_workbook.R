@@ -3,16 +3,16 @@
 #
 # This code generates the contribution intervals (max and min) of an agent in a match
 # The code reads two pieces of information
-# First, the code requies a data input file containing
-# a) the index of matching markets (1 to 33)
+# First, a data input file containing
+# a) the index of the matching markets (1 to 33)
 # b) the market-specific indices of upstream (PIs) and downstream (constellations) agents in each market (2 columns)
 # c) the matching covariates
 # d) a variable taking the value of 1 for matched agents in a market (and 0 otherwise)
-# e) two additional variables taking value of 1 (and 0 otherwise) for the upstream and downstream agents that need to be removed
+# e) two additional variables taking value of 1 (and 0 otherwise) for the upstream and downstream agents that need to be "removed"
 # Second, the code requires the list of point estimates of the matching function.
 # Here, we use the estimates produced in Mathematica: see Table 2a in the paper.
 # Users can apply the code to their input data, but need to follow the same data file format.
-# The input file should always be sorted by marketid, upstreamid, downstreamid. The code does not support missing data.
+# The code does not support missing data.
 
 library(maxscoreest)
 
@@ -22,25 +22,29 @@ library(maxscoreest)
 
 # The input file must be a delimiter-separated file with a header, and must
 # have the same structure as described in the `maxscoreest::importMatched`
-# function, but with two additional columns at the end, Fields on these columns
+# function, but with two additional columns at the end. Fields on these columns
 # take values `0` or `1`, depending on whether the corresponding row has to be
 # unmatched.
 # More specifically:
 # * The first three columns specify the market index, the upstream index, and
-#   the downstream index, in this order, of the row.
+#   the downstream index, in this order.
 # * Each market/upstream/downstream triple should appear only once. These
 #   indices should have sorted and consecutive values, starting from `1`.
 # * The last three columns specify whether this triple is a match, and whether
 #   this upstream or downstream should be unmatched. These fields take values
 #   `0` or `1`.
-# * Each of the remaining columns in the middle corresponds to an attribute.
-#   Fields on these columns contain distance values, and should be numerical.
-# Note that the actual header names are not taken into account.
+# * Each of the remaining columns in the middle corresponds to a matching covariate.
+#   Fields on these columns should be numerical.
+#   The input file should always be sorted by marketid, upstreamid, downstreamid. 
+#   Note that the actual header names are not taken into account.
 
 # Path to the input file.
 ifname <- "../data/stars_replication_step2.dat"
-# The optimal parameters. Instead of calculating the parameters using the
-# `maxscoreest` library, we provide a pre-calculated value.
+
+# The optimal parameters.
+# Attention, for reproducibility reasons, we provide the estimates obtained in Mathematica
+
+"remove" operations
 pointEstimate <- c(
     4.981905468469215,
     -2.4016513033944378,
@@ -48,7 +52,8 @@ pointEstimate <- c(
     1.2889501155821126,
     1.3983116175519597,
     2.76088191399337)
-# The index of the market to be exported.
+# The index of the market to be exported after removing some agents and rematching the existing ones
+# This allows the user to inspect how the remaining agents rematch after some disappear from the market
 exportMIdx <- 33
 
 ################################################################################
@@ -57,9 +62,12 @@ exportMIdx <- 33
 # Function definitions.
 
 #' Shift payoff matrices to zero
-#'
+# This step executes an affine transformation on the payoff matrix 
+# (the matrix that contains the payoffs of all real and counterfactual matches). 
+# The step does not interfere with the calculation of max and min, but speads up the execution. 
+
 #' Transform each payoff matrix by subtracting from each element the minimal
-#' entry of that matrix. The new payoff matrices have minimal value equal to
+#' entry of that matrix (called "offset"). The new payoff matrices have minimal value equal to
 #' zero. Return the shifted payoff matrices and the calculated offsets.
 #'
 #' @param payoffMatrices A list of payoff matrices, one for each market.
@@ -114,7 +122,7 @@ modifyR <- function(uIdxs, dIdxs, payoffMatrix, quotaU, quotaD) {
 
 # `precomputed.dat` is created by removing the last two columns from the input
 # file. This file is generated each time this code runs. Note that this is not
-# an output file, but a helper file for the rest of the procedure, and it safe
+# an output file, but a helper file for the rest of the procedure, and it is safe
 # to ignore.
 
 ofname <- file.path(dirname(ifname), "precomputed.dat")
@@ -198,7 +206,7 @@ totalPayoffs <- mapply(
 #'     respectively, that is unmatched. \cr
 #'   `$matches` \tab The new match matrix, after rematching. \cr
 #'   `$totalPayoffDiff` \tab The difference in total payoffs before and after
-#'     rematching.
+#'     rematching. This is referred to in the paper as the maximum of the contribution interval.
 #' }
 calcRemoveResults <- function(stream) {
     stopifnot(stream == "U" || stream == "D")
