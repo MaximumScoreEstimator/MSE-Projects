@@ -256,7 +256,6 @@ for (mIdx in seq_len(matchedData$noM)) {
         for (dIdx in seq_len(matchedData$noD[mIdx])) {
             payoff <- payoffMatrices[[mIdx]][dIdx, uIdx]
             originalMatch <- matchedData$matchMatrices[[mIdx]][dIdx, uIdx]
-            match <- matchedData$matchMatrices[[mIdx]][dIdx, uIdx]
             # Check if that upstream was previously removed.
             idxs <- which(sapply(
                 removeResultsU,
@@ -279,7 +278,7 @@ for (mIdx in seq_len(matchedData$noM)) {
             drmin <- max(0, payoff - urmax)
             row <- list(
                 mIdx = mIdx, uIdx = uIdx, dIdx = dIdx,
-                payoff = payoff, originalMatch = originalMatch, match = match,
+                payoff = payoff, originalMatch = originalMatch,
                 urmax = urmax, drmax = drmax, urmin = urmin, drmin = drmin,
                 removeU = removes[rowIdx, 1], removeD = removes[rowIdx, 2])
             rowIdx <- rowIdx + 1
@@ -289,7 +288,7 @@ for (mIdx in seq_len(matchedData$noM)) {
 }
 v1 <- data.frame(rbindlist(v1))
 colnames(v1)[1:3] <- matchedData$header[1:3]
-colnames(v1)[5:6] <- c("originalmatch", "storedmatch")
+colnames(v1)[5] <- c("originalmatch")
 v1u <- v1[v1$originalmatch == 1 & v1$removeU == 1, ]
 v1d <- v1[v1$originalmatch == 1 & v1$removeD == 1, ]
 v2 <- v1
