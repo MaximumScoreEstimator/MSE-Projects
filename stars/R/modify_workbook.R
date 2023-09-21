@@ -54,6 +54,8 @@ pointEstimate <- c(
 # The index of the market to be exported after removing some agents and rematching the existing ones
 # This allows the user to inspect how the remaining agents rematch after some disappear from the market
 exportMIdx <- 33
+# Whether to add the `storedmatch` column to the ".all.dat" output file.
+useStoredMatch <- FALSE
 
 ################################################################################
 
@@ -182,6 +184,10 @@ quotasD <- lapply(matchedData$matchMatrices, rowSums)
 # upstream-downstream pairs that are matched.
 totalPayoffs <- mapply(
     function(m, p) { sum(m*p) }, matchedData$matchMatrices, payoffMatrices)
+# Match matrices obtained after breaking all existing matches and calculating
+# the matchings that maximize the total payoffs given the payoff matrices
+# obtained from the optimal parameters.
+storedMatchMatrices <- CmatchMatrices(payoffMatrices, quotasU, quotasD)
 
 ################################################################################
 
@@ -256,6 +262,7 @@ for (mIdx in seq_len(matchedData$noM)) {
         for (dIdx in seq_len(matchedData$noD[mIdx])) {
             payoff <- payoffMatrices[[mIdx]][dIdx, uIdx]
             originalMatch <- matchedData$matchMatrices[[mIdx]][dIdx, uIdx]
+            storedMatch <- storedMatchMatrices[[mIdx]][dIdx, uIdx]
             # Check if that upstream was previously removed.
             idxs <- which(sapply(
                 removeResultsU,
@@ -279,8 +286,13 @@ for (mIdx in seq_len(matchedData$noM)) {
             row <- list(
                 mIdx = mIdx, uIdx = uIdx, dIdx = dIdx,
                 payoff = payoff, originalMatch = originalMatch,
+                storedMatch = storedMatch,
                 urmax = urmax, drmax = drmax, urmin = urmin, drmin = drmin,
                 removeU = removes[rowIdx, 1], removeD = removes[rowIdx, 2])
+            if (!useStoredMatch) {
+                # This actually drops the list element.
+                row$storedMatch <- NULL
+            }
             rowIdx <- rowIdx + 1
             v1 <- append(v1, list(row))
         }
@@ -289,9 +301,16 @@ for (mIdx in seq_len(matchedData$noM)) {
 v1 <- data.frame(rbindlist(v1))
 colnames(v1)[1:3] <- matchedData$header[1:3]
 colnames(v1)[5] <- c("originalmatch")
+if (useStoredMatch) {
+    colnames(v1)[6] <- c("storedmatch")
+}
+v2 <- v1
+if (useStoredMatch) {
+    # Only add the `storedmatch` column to ".all.dat".
+    v1 <- v1[, -6]
+}
 v1u <- v1[v1$originalmatch == 1 & v1$removeU == 1, ]
 v1d <- v1[v1$originalmatch == 1 & v1$removeD == 1, ]
-v2 <- v1
 
 #' Append columns to output table
 #'
