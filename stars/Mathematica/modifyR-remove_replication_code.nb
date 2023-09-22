@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    150846,       3423]
-NotebookOptionsPosition[    144998,       3319]
-NotebookOutlinePosition[    145393,       3335]
-CellTagsIndexPosition[    145350,       3332]
+NotebookDataLength[    157795,       3444]
+NotebookOptionsPosition[    145353,       3235]
+NotebookOutlinePosition[    149329,       3311]
+CellTagsIndexPosition[    149020,       3301]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -96,65 +96,80 @@ Mathematica/stars/\>\""}], "\[IndentingNewLine]",
     FontFamily->"Lucida Sans Unicode"], 
    StyleBox[
     RowBox[{
-     StyleBox["alternatively",
-      FontWeight->"Normal"], 
-     StyleBox[",",
-      FontWeight->"Normal"], 
-     StyleBox[" ",
-      FontWeight->"Normal"], 
-     StyleBox[
-      RowBox[{
-       RowBox[{
-       "users", " ", "can", " ", "download", " ", "the", " ", "code"}], "-", 
-       " ", 
-       RowBox[{
-       "both", " ", "the", " ", "library", " ", "and", " ", "this", " ", 
-        "notebook"}], "-", " ", 
-       RowBox[{"in", " ", "a", " ", "local", " ", "directory"}]}],
-      FontWeight->"Normal"], 
-     StyleBox[",",
-      FontWeight->"Normal"], 
-     StyleBox[" ",
-      FontWeight->"Normal"], 
      RowBox[{
+      StyleBox["alternatively",
+       FontWeight->"Normal"], 
+      StyleBox[",",
+       FontWeight->"Normal"], 
+      StyleBox[" ",
+       FontWeight->"Normal"], 
       StyleBox[
        RowBox[{
         RowBox[{
-        "and", " ", "read", " ", "the", " ", "input", " ", "file", " ", 
-         "from", " ", "the", " ", "local", " ", "directory", " ", "using", 
-         " ", "the", " ", "command", " ", 
-         StyleBox["\[IndentingNewLine]",
-          Background->RGBColor[0.94, 0.88, 0.94]], "directory"}], "=", 
-        "\!\(\*StyleBox[\"\\\"\",Background->RGBColor[1, 1, \
-0]]\)\!\(\*StyleBox[\"C\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\":\",Background->RGBColor[1., 1., 1.]]\)\!\(\*StyleBox[\
-\"\\\\\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"\\\\\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"Users\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"\\\\\\\\\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"mindruta\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"\\\\\\\\\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"Documents\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"\\\\\\\\\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"RESEARCH\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"\\\\\\\\\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"Mathematica\",Background->RGBColor[1., 1., \
-1.]]\)\!\(\*StyleBox[\"\\\\\\\\\",Background->RGBColor[1., 1., 1.]]\)\>\""}],
+        "users", " ", "can", " ", "download", " ", "the", " ", "code"}], "-", 
+        " ", 
+        RowBox[{
+        "both", " ", "the", " ", "library", " ", "and", " ", "this", " ", 
+         "notebook"}], "-", " ", 
+        RowBox[{"in", " ", "a", " ", "local", " ", "directory"}]}],
        FontWeight->"Normal"], 
-      StyleBox[";",
-       FontWeight->"Bold"], 
-      StyleBox["\[IndentingNewLine]",
-       FontWeight->"Bold",
-       Background->RGBColor[0.94, 0.88, 0.94]], 
-      StyleBox[
+      StyleBox[",",
+       FontWeight->"Normal"], 
+      StyleBox[" ",
+       FontWeight->"Normal"], 
+      RowBox[{
+       StyleBox[
+        RowBox[{
+         RowBox[{
+         "and", " ", "read", " ", "the", " ", "input", " ", "file", " ", 
+          "from", " ", "the", " ", "local", " ", "directory", " ", "using", 
+          " ", "the", " ", "command"}], " ", 
+         StyleBox["\[IndentingNewLine]",
+          Background->RGBColor[0.94, 0.88, 0.94]], 
+         RowBox[{"directory", "=", 
+          RowBox[{
+           StyleBox["\"\<\>",
+            Background->RGBColor[1, 1, 0]], 
+           RowBox[{
+            StyleBox["C",
+             Background->RGBColor[1., 1., 1.]], 
+            StyleBox[":",
+             Background->RGBColor[1., 1., 1.]], 
+            RowBox[{
+             StyleBox[
+              RowBox[{"\\", "\\", "Users"}],
+              Background->RGBColor[1., 1., 1.]], 
+             StyleBox["\\\\",
+              Background->RGBColor[1., 1., 1.]], 
+             StyleBox["mindruta",
+              Background->RGBColor[1., 1., 1.]], 
+             StyleBox["\\\\",
+              Background->RGBColor[1., 1., 1.]], 
+             StyleBox["Documents",
+              Background->RGBColor[1., 1., 1.]], 
+             StyleBox["\\\\",
+              Background->RGBColor[1., 1., 1.]], 
+             StyleBox["RESEARCH",
+              Background->RGBColor[1., 1., 1.]], 
+             StyleBox["\\\\",
+              Background->RGBColor[1., 1., 1.]], 
+             StyleBox["Mathematica",
+              Background->RGBColor[1., 1., 1.]], 
+             StyleBox["\\\\",
+              Background->RGBColor[1., 1., 1.]], "\"\<\>"}]}]}]}]}],
+        FontWeight->"Normal"], 
+       StyleBox[";",
+        FontWeight->"Bold"]}]}], 
+     StyleBox["\[IndentingNewLine]",
+      FontWeight->"Bold",
+      Background->RGBColor[0.94, 0.88, 0.94]], 
+     StyleBox[
+      RowBox[{
        RowBox[{"Get", "[", 
         RowBox[{"\"\<mse.m\>\"", ",", 
-         RowBox[{"Path", "\[Rule]", "directory"}]}], "]"}],
-       FontWeight->"Bold",
-       Background->RGBColor[1., 1., 1.]], 
-      StyleBox[";",
-       FontWeight->"Bold",
-       Background->RGBColor[1., 1., 1.]]}]}],
+         RowBox[{"Path", "\[Rule]", "directory"}]}], "]"}], ";"}],
+      FontWeight->"Bold",
+      Background->RGBColor[1., 1., 1.]]}],
     FontFamily->"Consolas",
     FontSize->14,
     FontColor->RGBColor[0.5019607843137255, 0., 0.]], 
@@ -181,75 +196,359 @@ Mathematica/stars/\>\""}], "\[IndentingNewLine]",
    3.9042300767513995`*^9}, {3.904230206199606*^9, 3.9042302806860976`*^9}, {
    3.9042303378182497`*^9, 3.9042303412497635`*^9}, {3.9042305478778644`*^9, 
    3.9042305533457704`*^9}, 3.904230769275017*^9},
- CellLabel->
-  "In[125]:=",ExpressionUUID->"8f1533be-93fc-4a00-b7d4-bfe8c3bb8ac8"],
+ CellLabel->"In[1]:=",ExpressionUUID->"8f1533be-93fc-4a00-b7d4-bfe8c3bb8ac8"],
 
 Cell[BoxData["\<\"https://raw.githubusercontent.com/MaximumScoreEstimator/MSE-\
 Mathematica/stars/\"\>"], "Output",
- CellChangeTimes->{3.9042308963331027`*^9},
- CellLabel->
-  "Out[125]=",ExpressionUUID->"32ddfd56-4bc9-4448-9e4f-a0737321b3ca"],
+ CellChangeTimes->{3.9042308963331027`*^9, 3.904342994208621*^9},
+ CellLabel->"Out[1]=",ExpressionUUID->"15034cb9-dede-4a1b-b59d-b1aa34f5168f"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData["\<\"Loaded import.m\"\>"], "Echo",
  CellChangeTimes->{
-  3.9042308968644276`*^9},ExpressionUUID->"085342f9-e802-4aed-be05-\
-611635d89ff8"],
+  3.904342995027483*^9},ExpressionUUID->"b058b204-565a-45cb-94ca-\
+8de0ede5acfb"],
+
+Cell[BoxData["\<\"{noM,no,u,noAttr}=import[filename,\\\"stream\\\"] to load \
+an upstream.\\r\\n{noM,no,d,noAttr}=import[filename,\\\"stream\\\"] to load a \
+downstream.\\r\\nimports a file .xls or .xlsx or a tab delimited file .dat \
+that includes data corresponding to an upstream (u) or downstream \
+(d).\\r\\nDatafiles consist of rows in the form \
+{noM,no,attr1,attr2,...,attrn,noAttr}.\\r\\nIn the case of .xls or .xlsx \
+files multiple sheets are joined - for example if each market resides in its \
+own excel \
+sheet.\\r\\n__________________________________________________________________\
+________________________________\\r\\n{header,noM,noU,noD,noAttr,\
+distanceMatrices,matchMatrix,mate}=import[filename_,\\\"precomp\\\",printflag_\
+:False]\\r\\nimports a file .xls or .xlsx or a tab delimited file .dat that \
+includes precomputed matched data (distances between same attributes are \
+already computed).\\r\\nDatafiles consists of rows in the form \
+{m,u,d,u1,d1,u2,d2,...,un,dn,matched (0 or 1)}.\\r\\nIn the case of .xls or \
+.xlsx files multiple sheets are joined - for example if each market resides \
+in its own excel sheet.\\r\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.90434299511761*^9},
+ CellTags->
+  "Info23904353795-7735091",ExpressionUUID->"16a44914-267c-40a6-8489-\
+14c3564447c4"],
 
 Cell[BoxData["\<\"Loaded payoff.m\"\>"], "Echo",
  CellChangeTimes->{
-  3.9042308974734573`*^9},ExpressionUUID->"5af4df11-04e9-4d82-890b-\
-a22353c38a28"],
+  3.904342995682303*^9},ExpressionUUID->"4a15d136-7a04-4546-9b33-\
+9fa420eeb3e5"],
+
+Cell[BoxData["\<\"Cx[n] creates a list of n variables named \
+x1,x2,...,xn.\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.904342995726754*^9},
+ CellTags->
+  "Info23904353795-7735091",ExpressionUUID->"bb20e9ee-45ec-4dd9-92bc-\
+7ef8032579cc"],
+
+Cell[BoxData["\<\"payoff[m,i,j] returns the payoff of i-upstream and \
+j-upstream in the m-market. \\nIt is used when the streams of u and d agents \
+are imported separately (i.e. not in the precomputed format). It is assumed \
+that u , d , and noAttr have been already assigned.\"\>"], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.904342995771928*^9},
+ CellTags->
+  "Info23904353795-7735091",ExpressionUUID->"95533e57-982a-4df3-aea0-\
+bfbd26d7f8c1"],
+
+Cell[BoxData["\<\"payoffDM[m,i,j] returns the payoff of i-upstream and \
+j-upstream in the m-market.\\r\\nIt is used in the case of precomputed data. \
+It is assumed that noAttr and distanceMatrices have been already \
+assigned.\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.904342995817767*^9},
+ CellTags->
+  "Info23904353795-7735091",ExpressionUUID->"a19dcd0e-2321-4f9b-a99b-\
+a70d8e419912"],
+
+Cell[BoxData["\<\"CpayoffMatrix[payoff(or \
+payoffDM),noM_:noM,noU_:noU,noD_:noD,parallel_:False] calculates and assigns \
+the payoffMatrix.\\r \\npayoff is used when input data consist of separate u \
+and d streams.\\r\\npayoffDM is used for precomputed \
+data.\\r\\nCpayoffMatrix[solution_?VectorQ] substitutes the solution to all \
+payoffMatrix's entries.\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.904342995863532*^9},
+ CellTags->
+  "Info23904353795-7735091",ExpressionUUID->"1498c28f-0ce8-44c6-a6dd-\
+7cd5bddb46cf"],
+
+Cell[BoxData["\<\"payoffMatrix2Positive[offset,payoffMatrix,epsilon_:0,\
+sameoffset_:False] translates the payoffMatrix subtracting an offset and \
+adding an epsilon. This function's main purpose is to make all elements \
+positive.\\nepsilon is the minimum element per market. It's default value is \
+0.\\nIf the sameoffset flag is set to False (which is the default value) then \
+each market will be handled separately related to its minimum.\\nIf the \
+sameoffset flag is set to True then the offset equals the minimum element in \
+the entire payoffMatrix.\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.904342995909525*^9},
+ CellTags->
+  "Info23904353795-7735091",ExpressionUUID->"0304bba9-82b4-4ab4-a163-\
+26fe2b0fbe3d"],
+
+Cell[BoxData["\<\"Ctotalpayoff[payoffobject,mates] calculates the total \
+payoff (i.e. the sum of payoffs) across all markets for the specific mates \
+arrangement. This function accepts as a first argument the \
+\[OpenCurlyDoubleQuote]payffobject\[CloseCurlyDoubleQuote], which can either \
+be the name of the payoff function or the payoffMatrix (in case we have \
+already calculated all pair payoffs).\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.904342995955389*^9},
+ CellTags->
+  "Info23904353795-7735091",ExpressionUUID->"ce36c8c0-3c82-45d9-8fe8-\
+694df4790431"],
 
 Cell[BoxData["\<\"Loaded matching.m\"\>"], "Echo",
  CellChangeTimes->{
-  3.904230898020233*^9},ExpressionUUID->"e5eb4355-a799-460e-8e2b-\
-f9c58ec6bd46"],
+  3.9043429963078136`*^9},ExpressionUUID->"65b0a1e0-58bc-4ba6-9707-\
+653042e29bd5"],
+
+Cell[BoxData["\<\"generateAssignmentMatrix[payoffs,quotaU,quotaD], generates \
+the optimal assignment of matches from the given matrix of payoffs for each \
+match. The optimal assignment is the one that maximizes the total payoff \
+(i.e. the sum of all payoffs) in a market. In an assignment matrix, each \
+entry (i,j) is 1 if i and j are matched and 0 otherwise. The quota can be a \
+number (the same for all streams) or a list that sets a specific quota per \
+agent.\\nNotice that the quota is max number of matches per agent ( so in the \
+data the real number of matches could be lower than the max).\"\>"], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.904342996367712*^9},
+ CellTags->
+  "Info23904353796-7735091",ExpressionUUID->"a04ccfcc-7904-45b6-8d36-\
+e4d6baeb252a"],
+
+Cell[BoxData["\<\"CmatchMatrix[payoffMatrix_,quotaU_:1,quotaD_:1,p_:0]  \
+\\nCalculates and creates/updates the global variable 'matchMatrix'.\\nIf p \
+is set to 0, it creates the matchMatrix by running the \
+generateAssignmentMatrix routine for all markets.\\nIf p is set to an integer \
+from 1 to the 'number of Markets' then the p'th element of the matchMatrix is \
+calculated.\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.9043429964281816`*^9},
+ CellTags->
+  "Info23904353796-7735091",ExpressionUUID->"39081dd1-93cd-47d5-be98-\
+eb3dcf0e55b2"],
+
+Cell[BoxData["\<\"Cquota[matchMatrix,function_:<|\\\"upstream\\\"\[Rule]True,\
+\\\"downstream\\\"\[Rule]True|>] Calculates and creates/updates the global \
+variable 'quota'.By default it calculates both streams quotas. It returns the \
+association list quota = \
+<|\\\"upstream\\\"->quotaU,\\\"downstream\\\"->quotaD|>. Quota is defined for \
+each stream u and d.\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.904342996488055*^9},
+ CellTags->
+  "Info23904353796-7735091",ExpressionUUID->"c08c4b8e-08d3-4a87-b76d-\
+f73a8601070a"],
+
+Cell[BoxData["\<\"Cmates[matchMatrix] simplifies the matchMatrix to a list of \
+triples that define matches across all markets. It provides another way to \
+express all the matching information that is, which upstream is matched with \
+which downstream and in which market. The output consists of a list of lists \
+of triples each of which has the following structure: \
+{market_index,upstream_index,downstream_index}.\\nOutput \
+example:{{{1,1,3},{1,3,1},{1,3,2}},{{2,1,1},{2,2,1},{2,2,3},{2,3,2}}}. In \
+this example we have 2 lists, one per market and each inner list contains the \
+triples. Note that in market 1, upstream agent 2 is not contributing which is \
+fine. \\nThis function is mainly used for the calculation of the total payoff \
+- see Ctotalpayoff routine.\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.904342996548983*^9},
+ CellTags->
+  "Info23904353796-7735091",ExpressionUUID->"9b155cf7-6c89-4ab6-9aa6-\
+b53e8355587a"],
+
+Cell[BoxData["\<\"Cmate[matchMatrix] simplifies the matchMatrix from the \
+original code by Santiago & Fox, to a matrix format which consists of lists \
+of pairs, one pair per market. Here, each pair has the following structure: \
+{{{1},{2},...,{noU within this market}},{{downstreams that are matched with \
+upstream1},{downstreams that are matched with upstream2},...,{downstreams \
+that are matched with upstream noU}}.\\nExample : \
+{{{{1},{2},{3}},{{3},{},{1,2}}},{{{1},{2},{3}},{{1},{1,3},{2}}}}.  In this \
+example, there are three upstream and three downstream agents in each market, \
+indexed 1, 2, 3. In the first market, upstream 1 is matched with downstream \
+3, upstream 2 is not matched, and upstream 3 is matched with downstream 1 and \
+ 2. In the second market, upstream 1 is matched with downstream 1, upstream 2 \
+with downstream 1 and 3, and upstream 3 with downstream 2.  \\nThe \
+mate=Cmate[matchMatrix] is later fed into the Cineqmembers routine.\"\>"], \
+"Print", "PrintUsage",
+ CellChangeTimes->{3.904342996610999*^9},
+ CellTags->
+  "Info23904353796-7735091",ExpressionUUID->"d2a2900e-93a5-4136-b2e4-\
+a8866e7a25a2"],
 
 Cell[BoxData["\<\"Loaded inequalities.m\"\>"], "Echo",
  CellChangeTimes->{
-  3.904230898489195*^9},ExpressionUUID->"69ff357e-4354-4825-8ae0-\
-bb499f20c26c"],
+  3.904342996908341*^9},ExpressionUUID->"300f1562-5c1b-45e8-bb25-\
+3ff6dafb8d07"],
+
+Cell[BoxData["\<\"Cineqmembers[mate] generates all the members required to \
+form the inequalities for many to many relationships defined by the mate. The \
+produced list of lists of triples defines also the way inequalities are \
+formed. At this time, inequalities are created to follow the theoretical \
+proofs done by J Fox. CAUTION: ineqmembers is the largest object so it \
+consumes a lot of memory. This is why we use MSEresources=\\\"Memory\\\" when \
+it is needed. Be careful because in the \[OpenCurlyDoubleQuote]Memory model\
+\[CloseCurlyDoubleQuote], ineqmembers are erased after being used for the \
+dataArray calculation, in order to speed up the calculations. \"\>"], "Print",\
+ "PrintUsage",
+ CellChangeTimes->{3.904342996954207*^9},
+ CellTags->
+  "Info23904353796-7735091",ExpressionUUID->"f885b18a-cbab-4eb9-8c0a-\
+cc9e3e8901ad"],
+
+Cell[BoxData["\<\"Cinequalities[f,ineqmembers] apply properly the f function \
+to ineqmembers to create inequalities. This routine is called by CdataArray \
+internally where as a function it uses payoffMatrix[[##]]&.\"\>"], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.9043429970153418`*^9},
+ CellTags->
+  "Info23904353796-7735091",ExpressionUUID->"410f5ad5-d63a-48a5-979e-\
+042e41716489"],
 
 Cell[BoxData["\<\"Loaded dataArray.m\"\>"], "Echo",
  CellChangeTimes->{
-  3.904230898848348*^9},ExpressionUUID->"50dd6558-ac77-4826-8b04-\
-572dc91d116d"],
+  3.904342997321631*^9},ExpressionUUID->"d4c35db6-8ee5-4127-9fab-\
+f51a2ce58bfc"],
+
+Cell[BoxData["\<\"CdataArray[payoffMatrix,xlist,printflag] creates the \
+dataArray. It works either using the \\\"Speed\\\" model or the \
+\\\"Memory\\\" model. It uses ineqmembers and Cinequalities internally and \
+for the memory model it erases ineqmembers after use.\"\>"], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.90434299737199*^9},
+ CellTags->
+  "Info23904353797-7735091",ExpressionUUID->"9bb4fb5f-f7ff-40fc-99f0-\
+a47a0746f8e1"],
 
 Cell[BoxData["\<\"Loaded objective.m\"\>"], "Echo",
  CellChangeTimes->{
-  3.904230899192343*^9},ExpressionUUID->"380e29d5-7c4c-4db1-9d3b-\
-6cba02ff0b9d"],
+  3.904342997664318*^9},ExpressionUUID->"27e58ca3-f4d5-4de2-9aaa-\
+48ad3127a8ef"],
+
+Cell[BoxData["\<\"objective[dataArray,x1,x2,...,xn] defines the objective \
+function to maximize the number of satisfied inequalities. An inequality is \
+satisfied when the left side is weakly greater than the right side \
+(>=).\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.9043429977082233`*^9},
+ CellTags->
+  "Info23904353797-7735091",ExpressionUUID->"b0317052-bd8d-4ace-b49e-\
+20b539606f81"],
+
+Cell[BoxData["\<\"objectiveV[dataArray,x1,x2,...,xn] is the verbose version \
+of objective routine. It also uses groupIDs produced by CdataArray routine. \
+It returns more information about how many inequalities are satisfied for \
+each market. It is obviously slower than the plain objective and it is used \
+as the final step after the maximization process.\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.904342997753931*^9},
+ CellTags->
+  "Info23904353797-7735091",ExpressionUUID->"3a214d40-5c3f-4187-ba04-\
+62d99989d650"],
 
 Cell[BoxData["\<\"Loaded maximize.m\"\>"], "Echo",
  CellChangeTimes->{
-  3.9042308998558583`*^9},ExpressionUUID->"8a5b32e2-9e06-4cb5-a874-\
-434496ff27d1"],
+  3.904342998554429*^9},ExpressionUUID->"500d3055-021e-42cb-ac3f-\
+63b60a234c79"],
+
+Cell[BoxData["\<\"maximize[dataArray_,noAttr_,method_:\\\"\
+DifferentialEvolution\\\", permuteinvariant_:True, printflag_:True] is MSE \
+specific and uses the optimize function. It uses the objective function (that \
+counts the number of satisfied inequalities). It returns a list \
+{max,{x1->value1, x2->value2, ...}, number of inequalities} where max is the \
+maximum number of satisfied inequalities found and the solution of the \
+maximization method {value1,value2,...}\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.9043429986000643`*^9},
+ CellTags->
+  "Info23904353798-7735091",ExpressionUUID->"70c6d4e8-6d51-4bd5-8a62-\
+44ca4b61b1eb"],
 
 Cell[BoxData["\<\"Loaded confidence.m\"\>"], "Echo",
  CellChangeTimes->{
-  3.9042309002065086`*^9},ExpressionUUID->"fd55c7a8-61fd-4b34-baf2-\
-082ae814f1e7"],
+  3.9043429989349403`*^9},ExpressionUUID->"c4dbab3f-8d22-4d8a-a6c2-\
+45efddf375be"],
+
+Cell[BoxData["\<\"pointIdentifiedCR[ssSize,numSubsamples,pointEstimate,args,\
+groupIDs,dataArray,method,permuteinvariant,options] generates a confidence \
+region estimate using subsampling.\\r\\nParameters:\\nssSize - The size of \
+each subsample to be estimated.\\nnumSubsamples -The number of subsamples to \
+use in estimating the confidence region.\\npointEstimate - The point estimate \
+to build the confidence region around (typically the output of \
+pairwiseMSE).\\nobjFunc - The objective function used in pairwiseMSE.\\nargs \
+- A list of unique symbols used in pairwiseMSE.\\ngroupIDs - A data map used \
+to generate the subsamples.\\ndataArray - The dataArray parameter used in \
+pairwiseMSE.\\noptions - An optional parameter specifying options. Available \
+options are:\\n\\tprogressUpdate - How often to print progress (0 to \
+disable).Default=0. \\n\\tconfidenceLevel - The confidence level of the \
+region.Default=.95.\\n\\tasymptotics - Type of asymptotics to use (nests or \
+coalitions).Default=nests.\\n\\tsubsampleMonitor - An expression to evaluate \
+for each subsample.Default=Null.\\n\\tsymmetric - True or False.If True,the \
+confidence region will be symmetric.Default=False.\"\>"], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.9043429990252867`*^9},
+ CellTags->
+  "Info23904353798-7735091",ExpressionUUID->"429d6138-b4e9-452e-b446-\
+8b71af1d3390"],
 
 Cell[BoxData["\<\"Loaded modifydata.m\"\>"], "Echo",
  CellChangeTimes->{
-  3.904230900549856*^9},ExpressionUUID->"8e6e9e3a-f8a9-4755-b3e5-\
-7351520f3706"]
-}, Open  ]],
+  3.904342999378481*^9},ExpressionUUID->"36d5e7a4-9621-4db7-9e81-\
+31c3f366fb97"],
+
+Cell[BoxData["\<\"store[var,printflag] is used for storing all global \
+variables to \\\"var\\\" global variable before they are modified.  In that \
+case they can restored later (with the restore[var] command).\\nVariables: \
+{\\\"header\\\",\\\"noM\\\",\\\"noU\\\",\\\"noD\\\",\\\"noAttr\\\",\\\"\
+distanceMatrices\\\",\\\"matchMatrix\\\",\\\"mate\\\",\\\"quota\\\",\\\"\
+payoffMatrix\\\",\\\"totalpayoff\\\",\\\"dataArray\\\"}}\"\>"], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.904342999423141*^9},
+ CellTags->
+  "Info23904353799-7735091",ExpressionUUID->"84a856fa-e9b0-4745-b593-\
+625140e2b5d6"],
+
+Cell[BoxData["\<\"restore[var,printflag] is used to restore all global \
+variables from \\\"var\\\" global variable (when the last store[] command was \
+used).\\nVariables: \
+{\\\"header\\\",\\\"noM\\\",\\\"noU\\\",\\\"noD\\\",\\\"noAttr\\\",\\\"\
+distanceMatrices\\\",\\\"matchMatrix\\\",\\\"mate\\\",\\\"quota\\\",\\\"\
+payoffMatrix\\\",\\\"totalpayoff\\\",\\\"dataArray\\\"}}\"\>"], "Print", \
+"PrintUsage",
+ CellChangeTimes->{3.9043429994685287`*^9},
+ CellTags->
+  "Info23904353799-7735091",ExpressionUUID->"f06525e8-3cd4-4e55-b4a9-\
+616a57e0ce44"],
+
+Cell[BoxData["\<\"modify[m_,u_List,d_List,function_?AssociationQ:<|\\\"\
+unmatch\\\"\[Rule]False,\\\"remove\\\"\[Rule]True,\\\"quota_reset\\\"\[Rule]\
+False,\\\"quota_update\\\"\[Rule]False,\\\"quota_update_upstream\\\"->False,\\\
+\"quota_downstream_upstream\\\"->False,\\\"rematch\\\"\[Rule]False|>] \
+\\nmodifies m's market upstream and/or downstream members. As a consequence \
+payoffMatrix, matchMatrix, quota are modified.\\nIf \
+\\\"unmatch\\\"\[Rule]True then it is supposed that the Transpose[u,d] are \
+the matches we need to unmatch.\\nIf \\\"unmatch\\\"\[Rule]True and \
+\\\"quota_update_upstream\\\"\[Rule]True then the quota of the unmatched \
+upstreams are reduced by one.\\nIf \\\"unmatch\\\"\[Rule]True and \
+\\\"quota_update_download\\\"\[Rule]True then the quota of the unmatched \
+downstreams are reduced by one.\\nIf \\\"remove\\\"\[Rule]True and \
+\\\"quota_reset\\\"\[Rule]True then the quota of the selected for remove \
+streams becomes equal to 0.\\nIf \\\"remove\\\"\[Rule]True and \
+\\\"quota_update\\\"\[Rule]True then the quota of the matched opposite stream \
+are reduced because of the stream removal.\\nIf \\\"rematch\\\"\[Rule]True \
+then the matchMatrix of the m'th market is re-calculated using the set quota.\
+\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.904342999513027*^9},
+ CellTags->
+  "Info23904353799-7735091",ExpressionUUID->"f5d8aefb-9152-4eb0-b0c0-\
+f728d5cc148a"]
+}, Closed]],
 
 Cell[BoxData[
  RowBox[{"{", 
-  RowBox[{"257897800", ",", "211720512", ",", "1"}], "}"}]], "Output",
- CellChangeTimes->{3.9042309014402695`*^9},
- CellLabel->
-  "Out[126]=",ExpressionUUID->"22a07ed2-6f07-4d22-8cf0-e9a909774eda"],
+  RowBox[{"74279992", ",", "59007384", ",", "1"}], "}"}]], "Output",
+ CellChangeTimes->{3.9042308963331027`*^9, 3.904342999631939*^9},
+ CellLabel->"Out[2]=",ExpressionUUID->"b18b5e43-c96a-42e7-8c9b-4a29b1bc56d5"],
 
-Cell[BoxData["\<\"C:\\\\Users\\\\mindruta\\\\Downloads\\\\MSE-Projects-main\\\
-\\stars\\\\Mathematica\"\>"], "Output",
- CellChangeTimes->{3.9042309014558954`*^9},
- CellLabel->
-  "Out[127]=",ExpressionUUID->"fcd5cdd6-b35a-4dbe-b41f-5aa613923910"]
+Cell[BoxData["\<\"/home/tchr/ApparentServices/Projects/MaximumScoreEstimator/\
+MSE-Projects/stars/Mathematica\"\>"], "Output",
+ CellChangeTimes->{3.9042308963331027`*^9, 3.904342999645534*^9},
+ CellLabel->"Out[3]=",ExpressionUUID->"762502fa-4b9a-409d-a97d-6c9fd4cb2bf4"]
 }, Open  ]]
 }, Open  ]],
 
@@ -306,8 +605,9 @@ final output. ",
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{"filename", "=", "\"\<../data/stars_replication_step2.dat\>\""}], 
-  ";", " ", 
+  RowBox[{
+   RowBox[{"filename", "=", "\"\<../data/stars_replication_step2.dat\>\""}], 
+   ";"}], " ", 
   StyleBox[
    RowBox[{"(*", 
     RowBox[{
@@ -328,8 +628,7 @@ Cell[BoxData[
   3.90386697575893*^9}, {3.903867051484448*^9, 3.903867054666109*^9}, {
   3.9042298609691734`*^9, 3.9042298620943327`*^9}},
  Background->RGBColor[1, 1, 0],
- CellLabel->
-  "In[128]:=",ExpressionUUID->"50354017-71e3-463e-bfed-fdbe502b1b57"],
+ CellLabel->"In[4]:=",ExpressionUUID->"50354017-71e3-463e-bfed-fdbe502b1b57"],
 
 Cell[BoxData[{
  RowBox[{
@@ -427,8 +726,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.8700585348020477`*^9, 3.870058575008821*^9}, 
    3.8700609930193367`*^9, {3.898927906437317*^9, 3.8989279123290653`*^9}, {
    3.898936155349147*^9, 3.898936155832509*^9}},
- CellLabel->
-  "In[129]:=",ExpressionUUID->"a3cb0087-1fc8-4701-9eea-294d587904c7"],
+ CellLabel->"In[5]:=",ExpressionUUID->"a3cb0087-1fc8-4701-9eea-294d587904c7"],
 
 Cell[CellGroupData[{
 
@@ -489,8 +787,7 @@ Cell[BoxData[
    3.87005880826478*^9}, 3.871020170691084*^9, {3.898927919696575*^9, 
    3.89892792826344*^9}, {3.8989279882071133`*^9, 3.898927997054154*^9}, {
    3.8989361610186367`*^9, 3.898936163509988*^9}},
- CellLabel->
-  "In[140]:=",ExpressionUUID->"c7ef506b-9ea5-40ec-bd93-32f7a9dfb21e"],
+ CellLabel->"In[16]:=",ExpressionUUID->"c7ef506b-9ea5-40ec-bd93-32f7a9dfb21e"],
 
 Cell[BoxData[
  TagBox[GridBox[{
@@ -501,9 +798,8 @@ Cell[BoxData[
       FontWeight->Bold]},
     {
      TemplateBox[{
-       StyleBox["\"File's first line\"", Bold, StripOnInput -> False], 
-       "\" header = \"", 
-       RowBox[{"{", 
+      StyleBox["\"File's first line\"", Bold, StripOnInput -> False],
+       "\" header = \"",RowBox[{"{", 
          RowBox[{
           "\"marketid\"", ",", "\"upstreamid\"", ",", "\"downstreamid\"", ",",
             "\"cites_cites\"", ",", "\"cites_size\"", ",", 
@@ -513,15 +809,13 @@ Cell[BoxData[
       "RowDefault"]},
     {
      TemplateBox[{
-       StyleBox["\"Number of Markets\"", Bold, StripOnInput -> False], 
-       "\" noM = \"", "33"},
+      StyleBox["\"Number of Markets\"", Bold, StripOnInput -> False],
+       "\" noM = \"","33"},
       "RowDefault"]},
     {
      TemplateBox[{
-       StyleBox[
-       "\"Number of upstreams per market\"", Bold, StripOnInput -> False], 
-       "\" noU = \"", 
-       RowBox[{"{", 
+      StyleBox["\"Number of upstreams per market\"", Bold, StripOnInput -> 
+        False],"\" noU = \"",RowBox[{"{", 
          RowBox[{
           "9", ",", "12", ",", "7", ",", "9", ",", "8", ",", "7", ",", "7", 
            ",", "11", ",", "6", ",", "12", ",", "21", ",", "8", ",", "14", 
@@ -532,10 +826,8 @@ Cell[BoxData[
       "RowDefault"]},
     {
      TemplateBox[{
-       StyleBox[
-       "\"Number of downstreams per market\"", Bold, StripOnInput -> False], 
-       "\" noD = \"", 
-       RowBox[{"{", 
+      StyleBox["\"Number of downstreams per market\"", Bold, StripOnInput -> 
+        False],"\" noD = \"",RowBox[{"{", 
          RowBox[{
           "9", ",", "13", ",", "7", ",", "12", ",", "10", ",", "7", ",", "8", 
            ",", "12", ",", "7", ",", "15", ",", "25", ",", "8", ",", "17", 
@@ -546,8 +838,8 @@ Cell[BoxData[
       "RowDefault"]},
     {
      TemplateBox[{
-       StyleBox["\"Number of attributes\"", Bold, StripOnInput -> False], 
-       "\" noAttr = \"", "7"},
+      StyleBox["\"Number of attributes\"", Bold, StripOnInput -> False],
+       "\" noAttr = \"","7"},
       "RowDefault"]},
     {
      TagBox[
@@ -1045,9 +1337,8 @@ Cell[BoxData[
    GridBoxAlignment->{"Columns" -> {{Left}}},
    GridBoxItemSize->{"Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
   "Column"]], "Output",
- CellChangeTimes->{3.9042309030024*^9},
- CellLabel->
-  "Out[140]=",ExpressionUUID->"940a2518-7a67-4e81-ba9a-5f8bf2309839"]
+ CellChangeTimes->{3.9042309030024*^9, 3.9043430008750267`*^9},
+ CellLabel->"Out[16]=",ExpressionUUID->"e65d0646-eff4-4d6f-897c-4be1dc24aae0"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1119,8 +1410,7 @@ Cell[BoxData[
    3.9038678184403133`*^9, 3.903867819150322*^9}, {3.903867913241226*^9, 
    3.903867913958085*^9}},
  Background->RGBColor[1, 1, 0],
- CellLabel->
-  "In[141]:=",ExpressionUUID->"6de7a44a-fc10-4e79-94b2-5291b58d8828"],
+ CellLabel->"In[17]:=",ExpressionUUID->"6de7a44a-fc10-4e79-94b2-5291b58d8828"],
 
 Cell[CellGroupData[{
 
@@ -1169,8 +1459,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.870058996266652*^9, 3.87005901810465*^9}, {
   3.8775967184514294`*^9, 3.8775967190737257`*^9}, {3.9038678125156727`*^9, 
   3.903867835711358*^9}},
- CellLabel->
-  "In[142]:=",ExpressionUUID->"ebee67b7-4cc4-46aa-b3b8-0dcdfa5bfd49"],
+ CellLabel->"In[18]:=",ExpressionUUID->"ebee67b7-4cc4-46aa-b3b8-0dcdfa5bfd49"],
 
 Cell[CellGroupData[{
 
@@ -1184,19 +1473,19 @@ solutio order=\"\>", "\[InvisibleSpace]",
   " The new ordering of attributes used for calculating the solutio order=", {
    5, 6, 1, 3, 2, 4}],
   Editable->False]], "Print",
- CellChangeTimes->{3.9042309160316176`*^9},
+ CellChangeTimes->{3.9042309160316176`*^9, 3.9043430071741753`*^9},
  CellLabel->
   "During evaluation of \
-In[142]:=",ExpressionUUID->"360313ac-2ca3-41df-ae08-c3b8c24bc1c9"],
+In[18]:=",ExpressionUUID->"d4cacfc9-3e64-4724-9f05-811c888b46e7"],
 
 Cell[BoxData["\<\"Method {DifferentialEvolution, CrossProbability -> 0.5, \
 InitialPoints -> Automatic, PenaltyFunction -> Automatic, PostProcess -> \
 Automatic, RandomSeed -> 12, ScalingFactor -> 0.6, SearchPoints -> 300, \
 Tolerance -> 0.001}\"\>"], "Print",
- CellChangeTimes->{3.9042309160316176`*^9},
+ CellChangeTimes->{3.9042309160316176`*^9, 3.904343007185783*^9},
  CellLabel->
   "During evaluation of \
-In[142]:=",ExpressionUUID->"2168e28d-b925-42da-ae8e-ec1d508e922b"],
+In[18]:=",ExpressionUUID->"44188d38-b2f0-489c-b2cd-99179e94fe6c"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -1263,10 +1552,10 @@ Cell[BoxData[
        99, 100, 100, 100, 100, 99, 100, 100, 98, 97, 99, 100, 100, 100, 100, 
       100, 100, 100, 100, 100, 100}}, Frame -> All]],
   Editable->False]], "Print",
- CellChangeTimes->{3.9042309160472393`*^9},
+ CellChangeTimes->{3.9042309160316176`*^9, 3.9043430071869287`*^9},
  CellLabel->
   "During evaluation of \
-In[142]:=",ExpressionUUID->"e5e42d10-68d8-4b71-80be-9165a1cb286c"]
+In[18]:=",ExpressionUUID->"ab468532-8f16-49ca-b9d4-43e595ffd8ea"]
 }, Open  ]],
 
 Cell[BoxData[
@@ -1277,9 +1566,8 @@ Cell[BoxData[
      RowBox[{"-", "2.4016513033944378`"}], ",", "2.76088191399337`", ",", 
      "1.3983116175519597`", ",", "1.2889501155821126`"}], "}"}], ",", 
    "3745"}], "}"}]], "Output",
- CellChangeTimes->{3.904230916125345*^9},
- CellLabel->
-  "Out[146]=",ExpressionUUID->"8a3a35a6-abd5-4b5d-8161-74db3c943f20"]
+ CellChangeTimes->{3.904230916125345*^9, 3.904343007228654*^9},
+ CellLabel->"Out[22]=",ExpressionUUID->"0a7d777f-c484-4220-a500-a033f3886175"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
@@ -1331,8 +1619,7 @@ Cell[BoxData[
      RowBox[{"offset", ",", "payoffMatrix"}], "]"}]}], ";", "offset"}], 
   "\[IndentingNewLine]"}]], "Input",
  CellChangeTimes->{{3.870061106702627*^9, 3.870061119717842*^9}},
- CellLabel->
-  "In[147]:=",ExpressionUUID->"8571a603-b3c4-43a7-bbba-57143cd79415"],
+ CellLabel->"In[23]:=",ExpressionUUID->"8571a603-b3c4-43a7-bbba-57143cd79415"],
 
 Cell[BoxData[
  RowBox[{"{", 
@@ -1347,9 +1634,8 @@ Cell[BoxData[
    ",", "0", ",", "0.1859489848250791`", ",", "0", ",", "0", ",", 
    "0.7279246007296228`", ",", "6.346142230325228`*^-18", ",", 
    "1.6841631`*^-17"}], "}"}]], "Output",
- CellChangeTimes->{3.9042309161722093`*^9},
- CellLabel->
-  "Out[147]=",ExpressionUUID->"f94a57a0-634d-40f6-a793-8e73b5c36e14"]
+ CellChangeTimes->{3.9042309161722093`*^9, 3.9043430073043327`*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"76547fdc-336d-436b-9fe5-3787a52f4ee0"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1402,33 +1688,32 @@ Cell[BoxData[{
   RowBox[{"store", "[", 
    RowBox[{"stored", ",", "True"}], "]"}], ";"}]}], "Input",
  CellChangeTimes->{{3.870061148573853*^9, 3.870061167959916*^9}},
- CellLabel->
-  "In[148]:=",ExpressionUUID->"b3f66ee3-1351-4107-8b1c-6ef557879141"],
+ CellLabel->"In[24]:=",ExpressionUUID->"b3f66ee3-1351-4107-8b1c-6ef557879141"],
 
 Cell[CellGroupData[{
 
 Cell[BoxData["\<\"quota is calculated for the first time. \
 Initializing...\"\>"], "Print",
- CellChangeTimes->{3.9042309161878304`*^9},
+ CellChangeTimes->{3.9042309161878304`*^9, 3.9043430073253117`*^9},
  CellLabel->
   "During evaluation of \
-In[148]:=",ExpressionUUID->"336e53df-6f05-47e3-b8f9-46f37da87c37"],
+In[24]:=",ExpressionUUID->"3639652d-1e42-403a-b199-5c1f7cf85e65"],
 
 Cell[BoxData[
  InterpretationBox[
-  RowBox[{"\<\"Stored \"\>", "\[InvisibleSpace]", "2898336", 
+  RowBox[{"\<\"Stored \"\>", "\[InvisibleSpace]", "2906376", 
    "\[InvisibleSpace]", "\<\" bytes to \\\"stored\\\" Association List: \\n \
 header, noM, noU, noD, noAttr, distanceMatrices, matchMatrix, mate, quota, \
 payoffMatrix, dataArray\"\>"}],
   SequenceForm[
-  "Stored ", 2898336, 
+  "Stored ", 2906376, 
    " bytes to \"stored\" Association List: \n header, noM, noU, noD, noAttr, \
 distanceMatrices, matchMatrix, mate, quota, payoffMatrix, dataArray"],
   Editable->False]], "Print",
- CellChangeTimes->{3.9042309161984963`*^9},
+ CellChangeTimes->{3.9042309161878304`*^9, 3.904343007337832*^9},
  CellLabel->
   "During evaluation of \
-In[148]:=",ExpressionUUID->"1c818d87-b58f-40e2-aadb-79f3289de7d1"]
+In[24]:=",ExpressionUUID->"d03da2f9-b205-4329-8790-fd2cdc294fe8"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1436,8 +1721,7 @@ Cell[CellGroupData[{
 
 Cell[BoxData["quota"], "Input",
  CellChangeTimes->{{3.898934484633274*^9, 3.8989344859009523`*^9}},
- CellLabel->
-  "In[151]:=",ExpressionUUID->"5173f81e-5259-40de-b185-6334f7d0838b"],
+ CellLabel->"In[27]:=",ExpressionUUID->"5173f81e-5259-40de-b185-6334f7d0838b"],
 
 Cell[BoxData[
  RowBox[{"\[LeftAssociation]", 
@@ -1773,9 +2057,8 @@ Cell[BoxData[
        "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", "1", ",", 
         "1", ",", "1", ",", "1", ",", "1", ",", "1"}], "}"}]}], "}"}]}]}], 
   "\[RightAssociation]"}]], "Output",
- CellChangeTimes->{3.9042309162737727`*^9},
- CellLabel->
-  "Out[151]=",ExpressionUUID->"5f00109f-c557-442d-adbd-a9a87adfdeda"]
+ CellChangeTimes->{3.9042309162737727`*^9, 3.90434300734938*^9},
+ CellLabel->"Out[27]=",ExpressionUUID->"d563fb32-9edc-40d9-b24b-904cc0c7d101"]
 }, Open  ]]
 }, Open  ]],
 
@@ -1972,382 +2255,22 @@ the match.\>\""}], ";"}], "\[IndentingNewLine]",
    3.9019550628867254`*^9, 3.901955081993783*^9}, {3.901955126725675*^9, 
    3.9019551806855755`*^9}},
  Background->RGBColor[0.88, 1, 0.88],
- CellLabel->
-  "In[152]:=",ExpressionUUID->"2f23cbd4-a653-4e65-8dc5-45774a384026"],
+ CellLabel->"In[28]:=",ExpressionUUID->"2f23cbd4-a653-4e65-8dc5-45774a384026"],
 
-Cell[BoxData[
- InterpretationBox[
-  StyleBox[
-   FrameBox[
-    DynamicModuleBox[{System`InformationDump`open$$ = False, 
-     System`InformationDump`mouseOver$$ = False}, 
-     PaneSelectorBox[{True->
-      TagBox[GridBox[{
-         {
-          ItemBox[
-           PaneBox[
-            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
-             StripOnInput->False,
-             BaseStyle -> None],
-            FrameMargins->{{4, 0}, {-1, 1}}],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False]},
-         {
-          ItemBox[
-           PaneBox[
-            
-            StyleBox["\<\"modifyR[m_,u_List,d_List] \\nmodifies m's market \
-upstream and/or downstream members. As a consequence payoffMatrix, \
-matchMatrix, quota are modified.\\n\\\"quota_reset\\\"\[Rule]True The quota \
-of the selected for remove streams becomes equal to 0 ( it's like these \
-agents don't exist; all other matches stay the \
-same).\\n\\\"rematch\\\"\[Rule]True The matchMatrix of any given m'th market \
-is re-calculated using the set quota; if rematch is not used, then the \
-matching pairings in the market remain the same after whatever we applied to \
-u and d in the previous steps. Attn: if we don't apply rematch, then the \
-maximum contribution of an agent is equal to the payoff generated by the \
-match.\"\>", "InformationUsageText",
-             StripOnInput->False,
-             LineSpacing->{1.5, 1.5, 3.}],
-            FrameMargins->{{10, 10}, {8, 10}}],
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False]},
-         {
-          PaneBox[
-           TagBox[GridBox[{
-              {
-               StyleBox[
-                TagBox[
-                 TooltipBox[
-                  StyleBox["\<\" Definitions\"\>", "InformationRowLabel",
-                   StripOnInput->False],
-                  "\"Definitions\"",
-                  TooltipStyle->"TextStyling"],
-                 Annotation[#, "Definitions", "Tooltip"]& ], "DialogStyle",
-                StripOnInput->False]},
-              {
-               TemplateBox[{"\"\[ThinSpace]\"", 
-                 GridBox[{{
-                    RowBox[{
-                    RowBox[{"modifyR", "[", 
-                    RowBox[{"m_", ",", "u_List", ",", "d_List"}], "]"}], ":=", 
-                    RowBox[{"Block", "[", 
-                    RowBox[{
-                    RowBox[{"{", 
-                    
-                    RowBox[{"keep", ",", "theirdownstream", ",", 
-                    "theirupstream"}], "}"}], ",", 
-                    RowBox[{
-                    RowBox[{"If", "[", 
-                    RowBox[{
-                    RowBox[{"u", "\[NotEqual]", 
-                    RowBox[{"{", "}"}]}], ",", 
-                    RowBox[{
-                    RowBox[{
-                    RowBox[{"quota", "\[LeftDoubleBracket]", 
-                    RowBox[{"1", ",", "m", ",", "u"}], 
-                    "\[RightDoubleBracket]"}], "=", 
-                    RowBox[{"Table", "[", 
-                    RowBox[{"0", ",", 
-                    RowBox[{"{", 
-                    RowBox[{"Length", "[", "u", "]"}], "}"}]}], "]"}]}], ";", 
-                    RowBox[{
-                    RowBox[{"matchMatrix", "\[LeftDoubleBracket]", 
-                    RowBox[{"m", ",", "u"}], "\[RightDoubleBracket]"}], "=", 
-                    RowBox[{"Table", "[", 
-                    RowBox[{"0", ",", 
-                    RowBox[{"{", 
-                    RowBox[{"Length", "[", "u", "]"}], "}"}], ",", 
-                    RowBox[{"{", 
-                    
-                    RowBox[{"noD", "\[LeftDoubleBracket]", "m", 
-                    "\[RightDoubleBracket]"}], "}"}]}], "]"}]}], ";", 
-                    RowBox[{"Cmate", "[", "matchMatrix", "]"}], ";"}]}], 
-                    "]"}], ";", 
-                    RowBox[{"If", "[", 
-                    RowBox[{
-                    RowBox[{"d", "\[NotEqual]", 
-                    RowBox[{"{", "}"}]}], ",", 
-                    RowBox[{
-                    RowBox[{
-                    RowBox[{"quota", "\[LeftDoubleBracket]", 
-                    RowBox[{"2", ",", "m", ",", "d"}], 
-                    "\[RightDoubleBracket]"}], "=", 
-                    RowBox[{"Table", "[", 
-                    RowBox[{"0", ",", 
-                    RowBox[{"{", 
-                    RowBox[{"Length", "[", "d", "]"}], "}"}]}], "]"}]}], ";", 
-                    RowBox[{
-                    RowBox[{"matchMatrix", "\[LeftDoubleBracket]", 
-                    RowBox[{"m", ",", "All", ",", "d"}], 
-                    "\[RightDoubleBracket]"}], "=", 
-                    RowBox[{"Table", "[", 
-                    RowBox[{"0", ",", 
-                    RowBox[{"{", 
-                    
-                    RowBox[{"noU", "\[LeftDoubleBracket]", "m", 
-                    "\[RightDoubleBracket]"}], "}"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"Length", "[", "d", "]"}], "}"}]}], "]"}]}], ";", 
-                    RowBox[{"Cmate", "[", "matchMatrix", "]"}], ";"}]}], 
-                    "]"}], ";", 
-                    RowBox[{"CmatchMatrix", "[", 
-                    RowBox[{"payoffMatrix", ",", 
-                    RowBox[{"quota", "[", "\"upstream\"", "]"}], ",", 
-                    RowBox[{"quota", "[", "\"downstream\"", "]"}], ",", "m"}],
-                     "]"}], ";", 
-                    RowBox[{"Cmate", "[", "matchMatrix", "]"}], ";"}]}], 
-                    "]"}]}]}, {" "}}, 
-                  GridBoxAlignment -> {"Columns" -> {{Left}}}, 
-                  DefaultBaseStyle -> "Column", 
-                  GridBoxItemSize -> {
-                   "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}]},
-                "RowDefault"]}
-             },
-             DefaultBaseStyle->"Column",
-             GridBoxAlignment->{"Columns" -> {{Left}}},
-             
-             GridBoxItemSize->{
-              "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-            "Column"],
-           FrameMargins->{{6, 0}, {3, 6}}], "\<\"\"\>"},
-         {
-          PaneBox[GridBox[{
-             {
-              
-              DynamicModuleBox[{System`InformationDump`open$$ = {
-               False, False, False, False, False, False}}, 
-               StyleBox[GridBox[{
-                  {
-                   TagBox[
-                    TooltipBox[
-                    StyleBox["\<\" Full Name\"\>", "InformationRowLabel",
-                    StripOnInput->False],
-                    "\"FullName\"",
-                    TooltipStyle->"TextStyling"],
-                    
-                    Annotation[#, "FullName", 
-                    "Tooltip"]& ], "\<\"Global`modifyR\"\>"}
-                 },
-                 AutoDelete->False,
-                 GridBoxAlignment->{"Columns" -> {Right, Left}},
-                 GridBoxDividers->None,
-                 GridBoxItemSize->{"Columns" -> {Automatic, Automatic}},
-                 GridBoxSpacings->{"Columns" -> {
-                    Offset[0.27999999999999997`], {
-                    Offset[0.5599999999999999]}, 
-                    Offset[0.27999999999999997`]}, "Rows" -> {
-                    Offset[0.2], {
-                    Offset[0.8]}, 
-                    Offset[0.2]}}], "DialogStyle",
-                StripOnInput->False],
-               DynamicModuleValues:>{}]}
-            },
-            DefaultBaseStyle->"Column",
-            GridBoxAlignment->{"Columns" -> {{Left}}},
-            GridBoxDividers->{"Columns" -> {{False}}, "Rows" -> {{False}}},
-            
-            GridBoxItemSize->{
-             "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}},
-            GridBoxSpacings->{"Columns" -> {
-                Offset[0.27999999999999997`], {
-                 Offset[0.5599999999999999]}, 
-                Offset[0.27999999999999997`]}, "Rows" -> {
-                Offset[0.2], {
-                 Offset[3.6]}, 
-                Offset[0.2]}}],
-           FrameMargins->{{6, 6}, {6, 3}}], ""},
-         {
-          ItemBox[
-           TagBox[
-            ButtonBox[
-             PaneSelectorBox[{False->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "UpPointerOpener"]], True->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "UpPointerOpenerHot"]]}, Dynamic[
-              System`InformationDump`mouseOver$$]],
-             Alignment->Left,
-             Appearance->{"Default" -> None},
-             
-             ButtonFunction:>FEPrivate`Set[
-              System`InformationDump`open$$, False],
-             Evaluator->Automatic,
-             FrameMargins->{{9, 0}, {0, 0}},
-             ImageMargins->0,
-             ImageSize->Full,
-             Method->"Preemptive"],
-            
-            EventHandlerTag[{
-             "MouseEntered" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
-              "MouseExited" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
-              Method -> "Preemptive", PassEventsDown -> Automatic, 
-              PassEventsUp -> True}]],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], "\[SpanFromLeft]"}
-        },
-        AutoDelete->False,
-        FrameStyle->Directive[
-          GrayLevel[0.8], 
-          Thickness[Tiny]],
-        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
-        GridBoxDividers->{
-         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
-        GridBoxItemSize->{
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-       "Grid"], False->
-      TagBox[GridBox[{
-         {
-          ItemBox[
-           PaneBox[
-            StyleBox["\<\" Symbol\"\>", "InformationTitleText",
-             StripOnInput->False],
-            FrameMargins->{{4, 0}, {-1, 1}}],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False]},
-         {
-          ItemBox[
-           PaneBox[
-            
-            StyleBox["\<\"modifyR[m_,u_List,d_List] \\nmodifies m's market \
-upstream and/or downstream members. As a consequence payoffMatrix, \
-matchMatrix, quota are modified.\\n\\\"quota_reset\\\"\[Rule]True The quota \
-of the selected for remove streams becomes equal to 0 ( it's like these \
-agents don't exist; all other matches stay the \
-same).\\n\\\"rematch\\\"\[Rule]True The matchMatrix of any given m'th market \
-is re-calculated using the set quota; if rematch is not used, then the \
-matching pairings in the market remain the same after whatever we applied to \
-u and d in the previous steps. Attn: if we don't apply rematch, then the \
-maximum contribution of an agent is equal to the payoff generated by the \
-match.\"\>", "InformationUsageText",
-             StripOnInput->False,
-             LineSpacing->{1.5, 1.5, 3.}],
-            FrameMargins->{{10, 10}, {8, 10}}],
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False], 
-          ItemBox["\<\"\"\>",
-           BaseStyle->"InformationUsageSubtitleBackground",
-           StripOnInput->False]},
-         {
-          ItemBox[
-           TagBox[
-            ButtonBox[
-             PaneSelectorBox[{False->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "DownPointerOpener"],
-               ImageSizeCache->{10., {3., 7.}}], True->
-              
-              DynamicBox[FEPrivate`FrontEndResource[
-               "FEBitmaps", "DownPointerOpenerHot"],
-               ImageSizeCache->{10., {3., 7.}}]}, Dynamic[
-              System`InformationDump`mouseOver$$]],
-             Alignment->Left,
-             Appearance->{"Default" -> None},
-             
-             ButtonFunction:>FEPrivate`Set[
-              System`InformationDump`open$$, True],
-             Evaluator->Automatic,
-             FrameMargins->{{9, 0}, {0, 0}},
-             ImageMargins->0,
-             ImageSize->Full,
-             Method->"Preemptive"],
-            
-            EventHandlerTag[{
-             "MouseEntered" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, True], 
-              "MouseExited" :> 
-              FEPrivate`Set[System`InformationDump`mouseOver$$, False], 
-              Method -> "Preemptive", PassEventsDown -> Automatic, 
-              PassEventsUp -> True}]],
-           BaseStyle->"InformationTitleBackground",
-           StripOnInput->False], "\[SpanFromLeft]"}
-        },
-        AutoDelete->False,
-        FrameStyle->Directive[
-          GrayLevel[0.8], 
-          Thickness[Tiny]],
-        GridBoxAlignment->{"Columns" -> {Left, Right}, "Rows" -> {{Center}}},
-        GridBoxDividers->{
-         "Columns" -> {{None}}, "Rows" -> {False, {True}, False}},
-        GridBoxItemSize->{
-         "Columns" -> {{Automatic}}, "Rows" -> {{Automatic}}}],
-       "Grid"]}, Dynamic[System`InformationDump`open$$],
-      BaselinePosition->Baseline,
-      FrameMargins->0,
-      ImageSize->Automatic],
-     DynamicModuleValues:>{}],
-    BaseStyle->"InformationGridFrame",
-    StripOnInput->False], "InformationGridPlain",
-   StripOnInput->False],
-  InformationData[
-   Association[
-   "ObjectType" -> "Symbol", "Usage" -> 
-    "modifyR[m_,u_List,d_List] \nmodifies m's market upstream and/or \
-downstream members. As a consequence payoffMatrix, matchMatrix, quota are \
-modified.\n\"quota_reset\"\[Rule]True The quota of the selected for remove \
-streams becomes equal to 0 ( it's like these agents don't exist; all other \
-matches stay the same).\n\"rematch\"\[Rule]True The matchMatrix of any given \
-m'th market is re-calculated using the set quota; if rematch is not used, \
-then the matching pairings in the market remain the same after whatever we \
-applied to u and d in the previous steps. Attn: if we don't apply rematch, \
+Cell[BoxData["\<\"modifyR[m_,u_List,d_List] \\nmodifies m's market upstream \
+and/or downstream members. As a consequence payoffMatrix, matchMatrix, quota \
+are modified.\\n\\\"quota_reset\\\"\[Rule]True The quota of the selected for \
+remove streams becomes equal to 0 ( it's like these agents don't exist; all \
+other matches stay the same).\\n\\\"rematch\\\"\[Rule]True The matchMatrix of \
+any given m'th market is re-calculated using the set quota; if rematch is not \
+used, then the matching pairings in the market remain the same after whatever \
+we applied to u and d in the previous steps. Attn: if we don't apply rematch, \
 then the maximum contribution of an agent is equal to the payoff generated by \
-the match.", "Documentation" -> None, "OwnValues" -> None, "UpValues" -> None,
-     "DownValues" -> 
-    Information`InformationValueForm[
-     DownValues, $CellContext`modifyR, {$CellContext`modifyR[
-         Pattern[$CellContext`m, 
-          Blank[]], 
-         Pattern[$CellContext`u, 
-          Blank[List]], 
-         Pattern[$CellContext`d, 
-          Blank[List]]] :> 
-       Block[{$CellContext`keep, $CellContext`theirdownstream, \
-$CellContext`theirupstream}, 
-         If[$CellContext`u != {}, 
-           Part[$CellContext`quota, 1, $CellContext`m, $CellContext`u] = 
-            Table[0, {
-               Length[$CellContext`u]}]; 
-           Part[$CellContext`matchMatrix, $CellContext`m, $CellContext`u] = 
-            Table[0, {
-               Length[$CellContext`u]}, {
-               
-               Part[$CellContext`noD, $CellContext`m]}]; \
-$CellContext`Cmate[$CellContext`matchMatrix]; Null]; 
-         If[$CellContext`d != {}, 
-           Part[$CellContext`quota, 2, $CellContext`m, $CellContext`d] = 
-            Table[0, {
-               Length[$CellContext`d]}]; 
-           Part[$CellContext`matchMatrix, $CellContext`m, 
-              All, $CellContext`d] = Table[0, {
-               Part[$CellContext`noU, $CellContext`m]}, {
-               
-               Length[$CellContext`d]}]; \
-$CellContext`Cmate[$CellContext`matchMatrix]; 
-           Null]; $CellContext`CmatchMatrix[$CellContext`payoffMatrix, 
-           $CellContext`quota["upstream"], 
-           $CellContext`quota[
-           "downstream"], $CellContext`m]; \
-$CellContext`Cmate[$CellContext`matchMatrix]; Null]}], "SubValues" -> None, 
-    "DefaultValues" -> None, "NValues" -> None, "FormatValues" -> None, 
-    "Options" -> None, "Attributes" -> {}, "FullName" -> "Global`modifyR"], 
-   False]]], "Output",
- CellChangeTimes->{3.904230916338313*^9},
- CellLabel->
-  "Out[155]=",ExpressionUUID->"8b348441-7a11-4901-9a85-03390d84cdc3"]
+the match.\"\>"], "Print", "PrintUsage",
+ CellChangeTimes->{3.9043430074849157`*^9},
+ CellTags->
+  "Info313904353807-7735091",ExpressionUUID->"ae976dea-721a-40c9-bace-\
+e9ccbe63712d"]
 }, Open  ]]
 }, Open  ]],
 
@@ -2503,8 +2426,7 @@ Cell[BoxData[{
   3.898037407183321*^9, 3.898037466228126*^9}, {3.898907269426437*^9, 
   3.89890727443017*^9}, {3.898934531567459*^9, 3.898934538075143*^9}, {
   3.898936345928101*^9, 3.898936365621706*^9}},
- CellLabel->
-  "In[156]:=",ExpressionUUID->"dab29fb0-8115-477d-830e-6ba293d817db"],
+ CellLabel->"In[32]:=",ExpressionUUID->"dab29fb0-8115-477d-830e-6ba293d817db"],
 
 Cell[CellGroupData[{
 
@@ -2698,10 +2620,10 @@ Cell[BoxData[
     33, 6, 5.897339200681138}, {33, 7, 3.6120854954857933`}, {
     33, 9, 2.1431117701517053`}}],
   Editable->False]], "Print",
- CellChangeTimes->{3.90423091928066*^9},
+ CellChangeTimes->{3.90423091928066*^9, 3.904343008740252*^9},
  CellLabel->
   "During evaluation of \
-In[156]:=",ExpressionUUID->"a08d809b-4fb9-4bfa-9c25-4dc1f8cb45f5"],
+In[32]:=",ExpressionUUID->"c368d06a-7d27-49c5-9971-5fb44d5bbad2"],
 
 Cell[BoxData[
  InterpretationBox[
@@ -2973,18 +2895,17 @@ Cell[BoxData[
     33, 5, 1.3521253074439699`}, {33, 7, 3.850390065223678}, {
     33, 12, 2.9930919643035594`}}],
   Editable->False]], "Print",
- CellChangeTimes->{3.904230919296277*^9},
+ CellChangeTimes->{3.90423091928066*^9, 3.904343008752034*^9},
  CellLabel->
   "During evaluation of \
-In[156]:=",ExpressionUUID->"43ede59f-0e2f-46a2-ace8-8a0eabf13e76"]
+In[32]:=",ExpressionUUID->"605978c7-a9b0-4b5f-a14c-2907756ac6a2"]
 }, Open  ]],
 
 Cell[BoxData[
  RowBox[{"{", 
   RowBox[{"73", ",", "105"}], "}"}]], "Output",
- CellChangeTimes->{3.9042309193118973`*^9},
- CellLabel->
-  "Out[160]=",ExpressionUUID->"6e3988ef-8343-4442-a234-c538c8ebe3b6"]
+ CellChangeTimes->{3.9042309193118973`*^9, 3.9043430087540503`*^9},
+ CellLabel->"Out[36]=",ExpressionUUID->"1b408642-389e-4e81-8dab-706ce009fad5"]
 }, Open  ]]
 }, Open  ]],
 
@@ -3075,10 +2996,6 @@ Cell[BoxData[{
            RowBox[{"[", 
             RowBox[{"m", ",", "u", ",", "d"}], "]"}], "]"}], ",", 
           RowBox[{"originalmatchMatrix", "[", 
-           RowBox[{"[", 
-            RowBox[{"m", ",", "u", ",", "d"}], "]"}], "]"}], ",", 
-          RowBox[{
-           RowBox[{"stored", "[", "\"\<matchMatrix\>\"", "]"}], "[", 
            RowBox[{"[", 
             RowBox[{"m", ",", "u", ",", "d"}], "]"}], "]"}], ",", 
           "\[IndentingNewLine]", 
@@ -3206,7 +3123,7 @@ Cell[BoxData[{
            " ", 
            RowBox[{
             RowBox[{"#", "[", 
-             RowBox[{"[", "11", "]"}], "]"}], "\[Equal]", "1"}]}], ")"}], 
+             RowBox[{"[", "10", "]"}], "]"}], "\[Equal]", "1"}]}], ")"}], 
          "&"}]}], "]"}], ",", 
       RowBox[{"Join", "[", 
        RowBox[{
@@ -3215,11 +3132,10 @@ Cell[BoxData[{
           RowBox[{"1", ";;", "3"}], "]"}], "]"}], ",", 
         RowBox[{"{", 
          RowBox[{
-         "\"\<payoff\>\"", ",", "\"\<originalmatch\>\"", ",", 
-          "\"\<storedmatch\>\"", ",", "\"\<urmax\>\"", ",", "\"\<drmax\>\"", 
-          ",", "\"\<urmin\>\"", ",", "\"\<drmin\>\"", ",", "\"\<removeU\>\"", 
-          ",", "\"\<removeD\>\""}], "}"}]}], "]"}]}], "]"}]}], "]"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+         "\"\<payoff\>\"", ",", "\"\<originalmatch\>\"", ",", "\"\<urmax\>\"",
+           ",", "\"\<drmax\>\"", ",", "\"\<urmin\>\"", ",", "\"\<drmin\>\"", 
+          ",", "\"\<removeU\>\"", ",", "\"\<removeD\>\""}], "}"}]}], "]"}]}], 
+     "]"}]}], "]"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
   RowBox[{
    RowBox[{"v2", "=", 
@@ -3263,10 +3179,10 @@ Cell[BoxData[{
          RowBox[{"1", ";;", "3"}], "]"}], "]"}], ",", 
        RowBox[{"{", 
         RowBox[{
-        "\"\<payoff\>\"", ",", "\"\<originalmatch\>\"", ",", 
-         "\"\<storedmatch\>\"", ",", "\"\<urmax\>\"", ",", "\"\<drmax\>\"", 
-         ",", "\"\<urmin\>\"", ",", "\"\<drmin\>\"", ",", "\"\<removeU\>\"", 
-         ",", "\"\<removeD\>\""}], "}"}], ",", "\[IndentingNewLine]", 
+        "\"\<payoff\>\"", ",", "\"\<originalmatch\>\"", ",", "\"\<urmax\>\"", 
+         ",", "\"\<drmax\>\"", ",", "\"\<urmin\>\"", ",", "\"\<drmin\>\"", 
+         ",", "\"\<removeU\>\"", ",", "\"\<removeD\>\""}], "}"}], ",", 
+       "\[IndentingNewLine]", 
        RowBox[{"ToString", "/@", 
         RowBox[{"(", 
          RowBox[{"umatchesheader", "[", 
@@ -3312,118 +3228,223 @@ Cell[BoxData[{
    3.898936517826995*^9}, {3.9038645702085247`*^9, 3.9038645732410135`*^9}, {
    3.9038672023324337`*^9, 3.903867204823937*^9}, {3.903867263164494*^9, 
    3.903867270226173*^9}, {3.9038673029935417`*^9, 3.9038673091434298`*^9}, 
-   3.903867367531973*^9, 3.9038680770253572`*^9},
- CellLabel->
-  "In[161]:=",ExpressionUUID->"2c39fb3f-7167-482b-a25a-df300d880eb9"]
+   3.903867367531973*^9, 3.9038680770253572`*^9, {3.904342933160407*^9, 
+   3.904342974642146*^9}},
+ CellLabel->"In[37]:=",ExpressionUUID->"2c39fb3f-7167-482b-a25a-df300d880eb9"]
 }, Open  ]]
 },
 WindowSize->{947, 467},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
-FrontEndVersion->"12.3 for Microsoft Windows (64-bit) (May 11, 2021)",
-StyleDefinitions->"Default.nb",
-ExpressionUUID->"4adc83ae-3069-472b-b7a4-0d82e90e312c"
+WindowMargins->{{0, Automatic}, {Automatic, 128}},
+Magnification->3.,
+FrontEndVersion->"11.3 for Linux x86 (64-bit) (March 6, 2018)",
+StyleDefinitions->"Default.nb"
 ]
 (* End of Notebook Content *)
 
 (* Internal cache information *)
 (*CellTagsOutline
-CellTagsIndex->{}
+CellTagsIndex->{
+ "Info23904353795-7735091"->{
+  Cell[8049, 212, 1315, 20, 1527, "Print",ExpressionUUID->"16a44914-267c-40a6-8489-14c3564447c4",
+   CellTags->"Info23904353795-7735091"],
+  Cell[9520, 239, 245, 5, 139, "Print",ExpressionUUID->"bb20e9ee-45ec-4dd9-92bc-7ef8032579cc",
+   CellTags->"Info23904353795-7735091"],
+  Cell[9768, 246, 451, 8, 213, "Print",ExpressionUUID->"95533e57-982a-4df3-aea0-bfbd26d7f8c1",
+   CellTags->"Info23904353795-7735091"],
+  Cell[10222, 256, 398, 7, 286, "Print",ExpressionUUID->"a19dcd0e-2321-4f9b-a99b-a70d8e419912",
+   CellTags->"Info23904353795-7735091"],
+  Cell[10623, 265, 528, 9, 578, "Print",ExpressionUUID->"1498c28f-0ce8-44c6-a6dd-7cd5bddb46cf",
+   CellTags->"Info23904353795-7735091"],
+  Cell[11154, 276, 728, 11, 432, "Print",ExpressionUUID->"0304bba9-82b4-4ab4-a163-26fe2b0fbe3d",
+   CellTags->"Info23904353795-7735091"],
+  Cell[11885, 289, 572, 9, 213, "Print",ExpressionUUID->"ce36c8c0-3c82-45d9-8fe8-694df4790431",
+   CellTags->"Info23904353795-7735091"]},
+ "Info23904353796-7735091"->{
+  Cell[12617, 305, 775, 12, 359, "Print",ExpressionUUID->"a04ccfcc-7904-45b6-8d36-e4d6baeb252a",
+   CellTags->"Info23904353796-7735091"],
+  Cell[13395, 319, 552, 9, 359, "Print",ExpressionUUID->"39081dd1-93cd-47d5-be98-eb3dcf0e55b2",
+   CellTags->"Info23904353796-7735091"],
+  Cell[13950, 330, 533, 9, 213, "Print",ExpressionUUID->"c08c4b8e-08d3-4a87-b76d-f73a8601070a",
+   CellTags->"Info23904353796-7735091"],
+  Cell[14486, 341, 943, 14, 505, "Print",ExpressionUUID->"9b155cf7-6c89-4ab6-9aa6-b53e8355587a",
+   CellTags->"Info23904353796-7735091"],
+  Cell[15432, 357, 1140, 17, 578, "Print",ExpressionUUID->"d2a2900e-93a5-4136-b2e4-a8866e7a25a2",
+   CellTags->"Info23904353796-7735091"],
+  Cell[16734, 381, 846, 13, 359, "Print",ExpressionUUID->"f885b18a-cbab-4eb9-8c0a-cc9e3e8901ad",
+   CellTags->"Info23904353796-7735091"],
+  Cell[17583, 396, 390, 7, 213, "Print",ExpressionUUID->"410f5ad5-d63a-48a5-979e-042e41716489",
+   CellTags->"Info23904353796-7735091"]},
+ "Info23904353797-7735091"->{
+  Cell[18132, 410, 440, 8, 213, "Print",ExpressionUUID->"9bb4fb5f-f7ff-40fc-99f0-a47a0746f8e1",
+   CellTags->"Info23904353797-7735091"],
+  Cell[18731, 425, 400, 7, 213, "Print",ExpressionUUID->"b0317052-bd8d-4ace-b49e-20b539606f81",
+   CellTags->"Info23904353797-7735091"],
+  Cell[19134, 434, 529, 8, 213, "Print",ExpressionUUID->"3a214d40-5c3f-4187-ba04-62d99989d650",
+   CellTags->"Info23904353797-7735091"]},
+ "Info23904353798-7735091"->{
+  Cell[19821, 449, 646, 10, 286, "Print",ExpressionUUID->"70c6d4e8-6d51-4bd5-8a62-44ca4b61b1eb",
+   CellTags->"Info23904353798-7735091"],
+  Cell[20629, 466, 1373, 20, 1235, "Print",ExpressionUUID->"429d6138-b4e9-452e-b446-8b71af1d3390",
+   CellTags->"Info23904353798-7735091"]},
+ "Info23904353799-7735091"->{
+  Cell[22162, 493, 602, 10, 213, "Print",ExpressionUUID->"84a856fa-e9b0-4745-b593-625140e2b5d6",
+   CellTags->"Info23904353799-7735091"],
+  Cell[22767, 505, 552, 10, 213, "Print",ExpressionUUID->"f06525e8-3cd4-4e55-b4a9-616a57e0ce44",
+   CellTags->"Info23904353799-7735091"],
+  Cell[23322, 517, 1415, 21, 724, "Print",ExpressionUUID->"f5d8aefb-9152-4eb0-b0c0-f728d5cc148a",
+   CellTags->"Info23904353799-7735091"]},
+ "Info313904353807-7735091"->{
+  Cell[102132, 2259, 897, 13, 505, "Print",ExpressionUUID->"ae976dea-721a-40c9-bace-e9ccbe63712d",
+   CellTags->"Info313904353807-7735091"]}
+ }
 *)
 (*CellTagsIndex
-CellTagsIndex->{}
+CellTagsIndex->{
+ {"Info23904353795-7735091", 145671, 3246},
+ {"Info23904353796-7735091", 146662, 3261},
+ {"Info23904353797-7735091", 147657, 3276},
+ {"Info23904353798-7735091", 148099, 3283},
+ {"Info23904353799-7735091", 148408, 3288},
+ {"Info313904353807-7735091", 148855, 3295}
+ }
 *)
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 2188, 42, 313, "Subsection",ExpressionUUID->"7fe09b6c-a211-4c69-884e-8194c3f7cb0c"],
+Cell[580, 22, 2188, 42, 903, "Subsection",ExpressionUUID->"7fe09b6c-a211-4c69-884e-8194c3f7cb0c"],
 Cell[CellGroupData[{
-Cell[2793, 68, 4632, 116, 183, "Input",ExpressionUUID->"8f1533be-93fc-4a00-b7d4-bfe8c3bb8ac8"],
-Cell[7428, 186, 242, 4, 32, "Output",ExpressionUUID->"32ddfd56-4bc9-4448-9e4f-a0737321b3ca"],
+Cell[2793, 68, 4816, 130, 553, "Input",ExpressionUUID->"8f1533be-93fc-4a00-b7d4-bfe8c3bb8ac8"],
+Cell[7612, 200, 259, 3, 147, "Output",ExpressionUUID->"15034cb9-dede-4a1b-b59d-b1aa34f5168f"],
 Cell[CellGroupData[{
-Cell[7695, 194, 152, 3, 24, "Echo",ExpressionUUID->"085342f9-e802-4aed-be05-611635d89ff8"],
-Cell[7850, 199, 152, 3, 24, "Echo",ExpressionUUID->"5af4df11-04e9-4d82-890b-a22353c38a28"],
-Cell[8005, 204, 152, 3, 24, "Echo",ExpressionUUID->"e5eb4355-a799-460e-8e2b-f9c58ec6bd46"],
-Cell[8160, 209, 156, 3, 24, "Echo",ExpressionUUID->"69ff357e-4354-4825-8ae0-bb499f20c26c"],
-Cell[8319, 214, 153, 3, 24, "Echo",ExpressionUUID->"50dd6558-ac77-4826-8b04-572dc91d116d"],
-Cell[8475, 219, 153, 3, 24, "Echo",ExpressionUUID->"380e29d5-7c4c-4db1-9d3b-6cba02ff0b9d"],
-Cell[8631, 224, 154, 3, 24, "Echo",ExpressionUUID->"8a5b32e2-9e06-4cb5-a874-434496ff27d1"],
-Cell[8788, 229, 156, 3, 24, "Echo",ExpressionUUID->"fd55c7a8-61fd-4b34-baf2-082ae814f1e7"],
-Cell[8947, 234, 154, 3, 24, "Echo",ExpressionUUID->"8e6e9e3a-f8a9-4755-b3e5-7351520f3706"]
-}, Open  ]],
-Cell[9116, 240, 226, 5, 32, "Output",ExpressionUUID->"22a07ed2-6f07-4d22-8cf0-e9a909774eda"],
-Cell[9345, 247, 245, 4, 32, "Output",ExpressionUUID->"fcd5cdd6-b35a-4dbe-b41f-5aa613923910"]
+Cell[7896, 207, 150, 3, 78, "Echo",ExpressionUUID->"b058b204-565a-45cb-94ca-8de0ede5acfb"],
+Cell[8049, 212, 1315, 20, 1527, "Print",ExpressionUUID->"16a44914-267c-40a6-8489-14c3564447c4",
+ CellTags->"Info23904353795-7735091"],
+Cell[9367, 234, 150, 3, 78, "Echo",ExpressionUUID->"4a15d136-7a04-4546-9b33-9fa420eeb3e5"],
+Cell[9520, 239, 245, 5, 139, "Print",ExpressionUUID->"bb20e9ee-45ec-4dd9-92bc-7ef8032579cc",
+ CellTags->"Info23904353795-7735091"],
+Cell[9768, 246, 451, 8, 213, "Print",ExpressionUUID->"95533e57-982a-4df3-aea0-bfbd26d7f8c1",
+ CellTags->"Info23904353795-7735091"],
+Cell[10222, 256, 398, 7, 286, "Print",ExpressionUUID->"a19dcd0e-2321-4f9b-a99b-a70d8e419912",
+ CellTags->"Info23904353795-7735091"],
+Cell[10623, 265, 528, 9, 578, "Print",ExpressionUUID->"1498c28f-0ce8-44c6-a6dd-7cd5bddb46cf",
+ CellTags->"Info23904353795-7735091"],
+Cell[11154, 276, 728, 11, 432, "Print",ExpressionUUID->"0304bba9-82b4-4ab4-a163-26fe2b0fbe3d",
+ CellTags->"Info23904353795-7735091"],
+Cell[11885, 289, 572, 9, 213, "Print",ExpressionUUID->"ce36c8c0-3c82-45d9-8fe8-694df4790431",
+ CellTags->"Info23904353795-7735091"],
+Cell[12460, 300, 154, 3, 78, "Echo",ExpressionUUID->"65b0a1e0-58bc-4ba6-9707-653042e29bd5"],
+Cell[12617, 305, 775, 12, 359, "Print",ExpressionUUID->"a04ccfcc-7904-45b6-8d36-e4d6baeb252a",
+ CellTags->"Info23904353796-7735091"],
+Cell[13395, 319, 552, 9, 359, "Print",ExpressionUUID->"39081dd1-93cd-47d5-be98-eb3dcf0e55b2",
+ CellTags->"Info23904353796-7735091"],
+Cell[13950, 330, 533, 9, 213, "Print",ExpressionUUID->"c08c4b8e-08d3-4a87-b76d-f73a8601070a",
+ CellTags->"Info23904353796-7735091"],
+Cell[14486, 341, 943, 14, 505, "Print",ExpressionUUID->"9b155cf7-6c89-4ab6-9aa6-b53e8355587a",
+ CellTags->"Info23904353796-7735091"],
+Cell[15432, 357, 1140, 17, 578, "Print",ExpressionUUID->"d2a2900e-93a5-4136-b2e4-a8866e7a25a2",
+ CellTags->"Info23904353796-7735091"],
+Cell[16575, 376, 156, 3, 78, "Echo",ExpressionUUID->"300f1562-5c1b-45e8-bb25-3ff6dafb8d07"],
+Cell[16734, 381, 846, 13, 359, "Print",ExpressionUUID->"f885b18a-cbab-4eb9-8c0a-cc9e3e8901ad",
+ CellTags->"Info23904353796-7735091"],
+Cell[17583, 396, 390, 7, 213, "Print",ExpressionUUID->"410f5ad5-d63a-48a5-979e-042e41716489",
+ CellTags->"Info23904353796-7735091"],
+Cell[17976, 405, 153, 3, 78, "Echo",ExpressionUUID->"d4c35db6-8ee5-4127-9fab-f51a2ce58bfc"],
+Cell[18132, 410, 440, 8, 213, "Print",ExpressionUUID->"9bb4fb5f-f7ff-40fc-99f0-a47a0746f8e1",
+ CellTags->"Info23904353797-7735091"],
+Cell[18575, 420, 153, 3, 78, "Echo",ExpressionUUID->"27e58ca3-f4d5-4de2-9aaa-48ad3127a8ef"],
+Cell[18731, 425, 400, 7, 213, "Print",ExpressionUUID->"b0317052-bd8d-4ace-b49e-20b539606f81",
+ CellTags->"Info23904353797-7735091"],
+Cell[19134, 434, 529, 8, 213, "Print",ExpressionUUID->"3a214d40-5c3f-4187-ba04-62d99989d650",
+ CellTags->"Info23904353797-7735091"],
+Cell[19666, 444, 152, 3, 78, "Echo",ExpressionUUID->"500d3055-021e-42cb-ac3f-63b60a234c79"],
+Cell[19821, 449, 646, 10, 286, "Print",ExpressionUUID->"70c6d4e8-6d51-4bd5-8a62-44ca4b61b1eb",
+ CellTags->"Info23904353798-7735091"],
+Cell[20470, 461, 156, 3, 78, "Echo",ExpressionUUID->"c4dbab3f-8d22-4d8a-a6c2-45efddf375be"],
+Cell[20629, 466, 1373, 20, 1235, "Print",ExpressionUUID->"429d6138-b4e9-452e-b446-8b71af1d3390",
+ CellTags->"Info23904353798-7735091"],
+Cell[22005, 488, 154, 3, 78, "Echo",ExpressionUUID->"36d5e7a4-9621-4db7-9e81-31c3f366fb97"],
+Cell[22162, 493, 602, 10, 213, "Print",ExpressionUUID->"84a856fa-e9b0-4745-b593-625140e2b5d6",
+ CellTags->"Info23904353799-7735091"],
+Cell[22767, 505, 552, 10, 213, "Print",ExpressionUUID->"f06525e8-3cd4-4e55-b4a9-616a57e0ce44",
+ CellTags->"Info23904353799-7735091"],
+Cell[23322, 517, 1415, 21, 724, "Print",ExpressionUUID->"f5d8aefb-9152-4eb0-b0c0-f728d5cc148a",
+ CellTags->"Info23904353799-7735091"]
+}, Closed]],
+Cell[24752, 541, 241, 4, 136, "Output",ExpressionUUID->"b18b5e43-c96a-42e7-8c9b-4a29b1bc56d5"],
+Cell[24996, 547, 270, 3, 147, "Output",ExpressionUUID->"762502fa-4b9a-409d-a97d-6c9fd4cb2bf4"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[9639, 257, 305, 7, 50, "Subsection",ExpressionUUID->"3756f8f2-542d-4771-85df-17bc9b26014d"],
-Cell[9947, 266, 2554, 38, 352, "Text",ExpressionUUID->"f7410fed-727d-4541-9c59-8c44a531b5ac"],
-Cell[12504, 306, 1075, 25, 74, "Input",ExpressionUUID->"50354017-71e3-463e-bfed-fdbe502b1b57"],
-Cell[13582, 333, 3110, 97, 283, "Input",ExpressionUUID->"a3cb0087-1fc8-4701-9eea-294d587904c7"],
+Cell[25315, 556, 305, 7, 151, "Subsection",ExpressionUUID->"3756f8f2-542d-4771-85df-17bc9b26014d"],
+Cell[25623, 565, 2554, 38, 904, "Text",ExpressionUUID->"f7410fed-727d-4541-9c59-8c44a531b5ac"],
+Cell[28180, 605, 1085, 25, 252, "Input",ExpressionUUID->"50354017-71e3-463e-bfed-fdbe502b1b57"],
+Cell[29268, 632, 3105, 96, 816, "Input",ExpressionUUID->"a3cb0087-1fc8-4701-9eea-294d587904c7"],
 Cell[CellGroupData[{
-Cell[16717, 434, 2333, 58, 258, "Input",ExpressionUUID->"c7ef506b-9ea5-40ec-bd93-32f7a9dfb21e"],
-Cell[19053, 494, 23643, 555, 236, "Output",ExpressionUUID->"940a2518-7a67-4e81-ba9a-5f8bf2309839"]
+Cell[32398, 732, 2329, 57, 748, "Input",ExpressionUUID->"c7ef506b-9ea5-40ec-bd93-32f7a9dfb21e"],
+Cell[34730, 791, 23610, 549, 1622, "Output",ExpressionUUID->"e65d0646-eff4-4d6f-897c-4be1dc24aae0"]
 }, Open  ]],
-Cell[42711, 1052, 4491, 70, 74, "Input",ExpressionUUID->"6de7a44a-fc10-4e79-94b2-5291b58d8828"],
+Cell[58355, 1343, 4487, 69, 252, "Input",ExpressionUUID->"6de7a44a-fc10-4e79-94b2-5291b58d8828"],
 Cell[CellGroupData[{
-Cell[47227, 1126, 578, 10, 42, "Subsubsection",ExpressionUUID->"6bb2c1a3-ef81-46c2-a3a8-ff31ae323afc"],
+Cell[62867, 1416, 578, 10, 127, "Subsubsection",ExpressionUUID->"6bb2c1a3-ef81-46c2-a3a8-ff31ae323afc"],
 Cell[CellGroupData[{
-Cell[47830, 1140, 1422, 32, 158, "Input",ExpressionUUID->"ebee67b7-4cc4-46aa-b3b8-0dcdfa5bfd49"],
+Cell[63470, 1430, 1418, 31, 476, "Input",ExpressionUUID->"ebee67b7-4cc4-46aa-b3b8-0dcdfa5bfd49"],
 Cell[CellGroupData[{
-Cell[49277, 1176, 543, 13, 22, "Print",ExpressionUUID->"360313ac-2ca3-41df-ae08-c3b8c24bc1c9"],
-Cell[49823, 1191, 410, 7, 40, "Print",ExpressionUUID->"2168e28d-b925-42da-ae8e-ec1d508e922b"],
-Cell[50236, 1200, 3573, 68, 613, "Print",ExpressionUUID->"e5e42d10-68d8-4b71-80be-9165a1cb286c"]
+Cell[64913, 1465, 566, 13, 74, "Print",ExpressionUUID->"d4cacfc9-3e64-4724-9f05-811c888b46e7"],
+Cell[65482, 1480, 431, 7, 138, "Print",ExpressionUUID->"44188d38-b2f0-489c-b2cd-99179e94fe6c"],
+Cell[65916, 1489, 3596, 68, 834, "Print",ExpressionUUID->"ab468532-8f16-49ca-b9d4-43e595ffd8ea"]
 }, Open  ]],
-Cell[53824, 1271, 442, 10, 32, "Output",ExpressionUUID->"8a3a35a6-abd5-4b5d-8161-74db3c943f20"]
+Cell[69527, 1560, 460, 9, 147, "Output",ExpressionUUID->"0a7d777f-c484-4220-a500-a033f3886175"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[54327, 1288, 601, 12, 50, "Subsection",ExpressionUUID->"8563995e-cdb6-4666-b308-3fae7db4cd29"],
-Cell[54931, 1302, 1189, 19, 112, "Text",ExpressionUUID->"d1344fae-e741-4eba-9bb7-f2b769084ccb"],
+Cell[70048, 1576, 601, 12, 151, "Subsection",ExpressionUUID->"8563995e-cdb6-4666-b308-3fae7db4cd29"],
+Cell[70652, 1590, 1189, 19, 346, "Text",ExpressionUUID->"d1344fae-e741-4eba-9bb7-f2b769084ccb"],
 Cell[CellGroupData[{
-Cell[56145, 1325, 369, 9, 58, "Input",ExpressionUUID->"8571a603-b3c4-43a7-bbba-57143cd79415"],
-Cell[56517, 1336, 841, 15, 57, "Output",ExpressionUUID->"f94a57a0-634d-40f6-a793-8e73b5c36e14"]
+Cell[71866, 1613, 365, 8, 204, "Input",ExpressionUUID->"8571a603-b3c4-43a7-bbba-57143cd79415"],
+Cell[72234, 1623, 861, 14, 229, "Output",ExpressionUUID->"76547fdc-336d-436b-9fe5-3787a52f4ee0"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[57407, 1357, 388, 8, 50, "Subsection",ExpressionUUID->"0c7d507c-902a-4993-b7ee-a14361e88265"],
-Cell[57798, 1367, 1380, 21, 112, "Text",ExpressionUUID->"a33d4ea2-79f7-4d8a-8af9-fce5024a3243"],
+Cell[73144, 1643, 388, 8, 151, "Subsection",ExpressionUUID->"0c7d507c-902a-4993-b7ee-a14361e88265"],
+Cell[73535, 1653, 1380, 21, 346, "Text",ExpressionUUID->"a33d4ea2-79f7-4d8a-8af9-fce5024a3243"],
 Cell[CellGroupData[{
-Cell[59203, 1392, 514, 13, 83, "Input",ExpressionUUID->"b3f66ee3-1351-4107-8b1c-6ef557879141"],
+Cell[74940, 1678, 510, 12, 272, "Input",ExpressionUUID->"b3f66ee3-1351-4107-8b1c-6ef557879141"],
 Cell[CellGroupData[{
-Cell[59742, 1409, 241, 5, 22, "Print",ExpressionUUID->"336e53df-6f05-47e3-b8f9-46f37da87c37"],
-Cell[59986, 1416, 651, 14, 40, "Print",ExpressionUUID->"1c818d87-b58f-40e2-aadb-79f3289de7d1"]
+Cell[75475, 1694, 264, 5, 74, "Print",ExpressionUUID->"3639652d-1e42-403a-b199-5c1f7cf85e65"],
+Cell[75742, 1701, 672, 14, 138, "Print",ExpressionUUID->"d03da2f9-b205-4329-8790-fd2cdc294fe8"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[60686, 1436, 182, 3, 32, "Input",ExpressionUUID->"5173f81e-5259-40de-b185-6334f7d0838b"],
-Cell[60871, 1441, 15236, 336, 604, "Output",ExpressionUUID->"5f00109f-c557-442d-adbd-a9a87adfdeda"]
+Cell[76463, 1721, 178, 2, 135, "Input",ExpressionUUID->"5173f81e-5259-40de-b185-6334f7d0838b"],
+Cell[76644, 1725, 15253, 335, 1712, "Output",ExpressionUUID->"d563fb32-9edc-40d9-b24b-904cc0c7d101"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[76156, 1783, 520, 10, 73, "Subsection",ExpressionUUID->"a86f0b7a-3566-4f2d-bc8f-8263370a281a"],
-Cell[76679, 1795, 294, 8, 81, "Text",ExpressionUUID->"95668b4b-157e-41ca-911a-a824f815193e"],
+Cell[91946, 2066, 520, 10, 221, "Subsection",ExpressionUUID->"a86f0b7a-3566-4f2d-bc8f-8263370a281a"],
+Cell[92469, 2078, 294, 8, 249, "Text",ExpressionUUID->"95668b4b-157e-41ca-911a-a824f815193e"],
 Cell[CellGroupData[{
-Cell[76998, 1807, 9345, 168, 624, "Input",ExpressionUUID->"2f23cbd4-a653-4e65-8dc5-45774a384026"],
-Cell[86346, 1977, 16184, 372, 245, "Output",ExpressionUUID->"8b348441-7a11-4901-9a85-03390d84cdc3"]
+Cell[92788, 2090, 9341, 167, 1680, "Input",ExpressionUUID->"2f23cbd4-a653-4e65-8dc5-45774a384026"],
+Cell[102132, 2259, 897, 13, 505, "Print",ExpressionUUID->"ae976dea-721a-40c9-bace-e9ccbe63712d",
+ CellTags->"Info313904353807-7735091"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[102579, 2355, 486, 10, 50, "Subsection",ExpressionUUID->"c550463b-0ffd-4ded-b145-a19c883322ff"],
-Cell[103068, 2367, 627, 11, 52, "Text",ExpressionUUID->"b6cf214e-c985-4c29-87b3-e713cd1ac9e1"],
+Cell[103078, 2278, 486, 10, 151, "Subsection",ExpressionUUID->"c550463b-0ffd-4ded-b145-a19c883322ff"],
+Cell[103567, 2290, 627, 11, 160, "Text",ExpressionUUID->"b6cf214e-c985-4c29-87b3-e713cd1ac9e1"],
 Cell[CellGroupData[{
-Cell[103720, 2382, 4726, 124, 558, "Input",ExpressionUUID->"dab29fb0-8115-477d-830e-6ba293d817db"],
+Cell[104219, 2305, 4722, 123, 1564, "Input",ExpressionUUID->"dab29fb0-8115-477d-830e-6ba293d817db"],
 Cell[CellGroupData[{
-Cell[108471, 2510, 9262, 193, 198, "Print",ExpressionUUID->"a08d809b-4fb9-4bfa-9c25-4dc1f8cb45f5"],
-Cell[117736, 2705, 13244, 273, 304, "Print",ExpressionUUID->"43ede59f-0e2f-46a2-ace8-8a0eabf13e76"]
+Cell[108966, 2432, 9283, 193, 579, "Print",ExpressionUUID->"c368d06a-7d27-49c5-9971-5fb44d5bbad2"],
+Cell[118252, 2627, 13264, 273, 894, "Print",ExpressionUUID->"605978c7-a9b0-4b5f-a14c-2907756ac6a2"]
 }, Open  ]],
-Cell[130995, 2981, 203, 5, 32, "Output",ExpressionUUID->"6e3988ef-8343-4442-a234-c538c8ebe3b6"]
+Cell[131531, 2903, 223, 4, 105, "Output",ExpressionUUID->"1b408642-389e-4e81-8dab-706ce009fad5"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[131247, 2992, 426, 9, 50, "Subsection",ExpressionUUID->"28eec9f2-befe-441d-9ac1-8c6313a863ca"],
-Cell[131676, 3003, 2286, 34, 252, "Text",ExpressionUUID->"cbb94802-e602-4106-a3ab-292c80f3a395"],
-Cell[133965, 3039, 11017, 277, 957, "Input",ExpressionUUID->"2c39fb3f-7167-482b-a25a-df300d880eb9"]
+Cell[131803, 2913, 426, 9, 151, "Subsection",ExpressionUUID->"28eec9f2-befe-441d-9ac1-8c6313a863ca"],
+Cell[132232, 2924, 2286, 34, 718, "Text",ExpressionUUID->"cbb94802-e602-4106-a3ab-292c80f3a395"],
+Cell[134521, 2960, 10816, 272, 2640, "Input",ExpressionUUID->"2c39fb3f-7167-482b-a25a-df300d880eb9"]
 }, Open  ]]
 }
 ]
