@@ -51,7 +51,7 @@ pointEstimate <- c(
     1.3983116175519597,
     1.2889501155821126)
 
-# The index of the market to be exported after removing some agents and rematching the existing ones
+# *The index of the market to be exported after removing some agents and rematching the existing ones*
 # This allows the user to inspect how the remaining agents rematch after some disappear from the market
 exportMIdx <- 33
 # Whether to add the `storedmatch` column to the ".all.dat" output file.
@@ -62,24 +62,24 @@ useStoredMatch <- FALSE
 ################################################################################
 # Function definitions.
 
-#' Shift payoff matrices to zero
-#'
-#' Transform each payoff matrix by subtracting from each element the minimal
-#' entry of that matrix (called "offset"). The new payoff matrices have minimal
-#' value equal to zero Return the shifted payoff matrices and the calculated
-#' offsets.
-#'
-#' This part of the code executes an affine transformation on the payoff matrix
-#' (the matrix that contains the payoffs of all real and counterfactual
-#' matches). This procedure does not interfere with the calculation of max and
-#' min, but speeds up the execution. 
-#'
-#' @param payoffMatrices A list of payoff matrices, one for each market.
-#' @return A list with members:
-#' \tabular{ll}{
-#'   `$payoffMatrices` \tab The shifted payoff matrices, as a list. \cr
-#'   `$offsets` \tab The offsets, as a list.
-#' }
+# *Shift payoff matrices to zero
+#
+# Transform each payoff matrix by subtracting from each element the minimal
+# entry of that matrix (called "offset"). The new payoff matrices have minimal
+# value equal to zero Return the shifted payoff matrices and the calculated
+# offsets.
+#
+# This part of the code executes an affine transformation on the payoff matrix
+# (the matrix that contains the payoffs of all real and counterfactual
+# matches). This procedure does not interfere with the calculation of max and
+# min, but speeds up the execution. 
+#
+# @param payoffMatrices A list of payoff matrices, one for each market.
+# @return A list with members:
+# \tabular{ll}{
+#   `$payoffMatrices` \tab The shifted payoff matrices, as a list. \cr
+#   `$offsets` \tab The offsets, as a list.
+# }
 shiftPayoffMatrices <- function(payoffMatrices) {
     results <- lapply(
         payoffMatrices,
@@ -93,23 +93,23 @@ shiftPayoffMatrices <- function(payoffMatrices) {
     return(list(payoffMatrices = newPayoffMatrices, offsets = unlist(offsets)))
 }
 
-#' Modify market data by unmatching and rematching
-#'
-#' Unmatch the given upstreams and downstreams by setting their respective
-#' quotas to zero. These agents cannot participate in matches. After unmatching,
-#' calculate the new optimal matches in each market, given the original payoff matrix.
-#'
-#' @param uIdxs A vector of upstream indices to be unmatched.
-#' @param dIdxs A vector of downstream indices to be unmatched.
-#' @param payoffMatrix The payoff matrix of the market.
-#' @param quotaU The vector of quotas for the upstreams.
-#' @param quotaD The vector of quotas for the downstreams.
-#' @return A list with members:
-#' \tabular{ll}{
-#'   `$matchMatrix` \tab The match matrix after rematching. \cr
-#'   `$quotaU` \tab The vector of upstream quotas after unmatching. \cr
-#'   `$quotaD` \tab The vector of downstream quotas after unmatching.
-#' }
+# *Modify market data by unmatching and rematching*
+#
+# Unmatch the given upstreams and downstreams by setting their respective
+# quotas to zero. These agents cannot participate in subsequent matches. After unmatching,
+# calculate the new optimal matches in each market, given the original payoff matrix.
+#
+# @param uIdxs A vector of upstream indices to be unmatched.
+# @param dIdxs A vector of downstream indices to be unmatched.
+# @param payoffMatrix The payoff matrix of the market.
+# @param quotaU The vector of quotas for the upstreams.
+# @param quotaD The vector of quotas for the downstreams.
+# @return A list with members:
+# \tabular{ll}{
+#   `$matchMatrix` \tab The match matrix after rematching. \cr
+#   `$quotaU` \tab The vector of upstream quotas after unmatching. \cr
+#   `$quotaD` \tab The vector of downstream quotas after unmatching.
+# }
 modifyR <- function(uIdxs, dIdxs, payoffMatrix, quotaU, quotaD) {
     quotaU[uIdxs] <- 0
     quotaD[dIdxs] <- 0
@@ -125,9 +125,9 @@ modifyR <- function(uIdxs, dIdxs, payoffMatrix, quotaU, quotaD) {
 # Output files are created in the same directory as the input file.
 
 # `precomputed.dat` is created by removing the last two columns from the input
-# file. This file is generated each time this code runs. Note that this is not
+# file. This file is generated locally each time this code runs. Note that this is not
 # an output file, but a helper file for the rest of the procedure, and it is safe
-# to ignore.
+# to ignore. Do not delete this file until all results are obtained.  
 
 ofname <- file.path(dirname(ifname), "precomputed.dat")
 ofPrefix <- file.path(
@@ -194,28 +194,28 @@ storedMatchMatrices <- CmatchMatrices(payoffMatrices, quotasU, quotasD)
 ################################################################################
 # Perform unmatchings and accumulate results.
 
-#' Unmatch and rematch all pairs
-#'
-#' Perform a modification for each row in the `removeu` or `removed` tables.
-#' When the upstream functionality is chosen, each modification unmatches only
-#' the single upstream described in the `removeu` row, and unmatches no
-#' downstreams. When the downstream functionality is chosen, each modification
-#' unmatches the single downstream described in the `removed` row, and unmatches
-#' no upstreams. In both cases, the new match matrix and the difference in total
-#' payoffs is recorded.
-#'
-#' @param stream `"U"` for upstreams, `"D"` for downstreams.
-#' @return A list with one element for each row of `removeu` or `removed`,
-#'   respectively. Each element is a list with members:
-#' \tabular{ll}{
-#'   `$stream` \tab The value of the `stream` parameter. \cr
-#'   `$mIdx` \tab The index of the market to be modified. \cr
-#'   `$uIdx` or `$dIdx` \tab The index of the upstream or downstream,
-#'     respectively, that is unmatched. \cr
-#'   `$matches` \tab The new match matrix, after rematching. \cr
-#'   `$totalPayoffDiff` \tab The difference in total payoffs before and after
-#'     rematching. This is referred to in the paper as the maximum of the contribution interval.
-#' }
+# Unmatch and rematch all pairs
+#
+# Perform a modification for each row in the `removeu` or `removed` tables.
+# When the upstream functionality is chosen, each modification unmatches only
+# the single upstream described in the `removeu` row, and unmatches no
+# downstreams. When the downstream functionality is chosen, each modification
+# unmatches the single downstream described in the `removed` row, and unmatches
+# no upstreams. In both cases, the new match matrix and the difference in total
+# payoffs is recorded.
+#
+# @param stream `"U"` for upstreams, `"D"` for downstreams.
+# @return A list with one element for each row of `removeu` or `removed`,
+#   respectively. Each element is a list with members:
+# \tabular{ll}{
+#   `$stream` \tab The value of the `stream` parameter. \cr
+#   `$mIdx` \tab The index of the market to be modified. \cr
+#   `$uIdx` or `$dIdx` \tab The index of the upstream or downstream,
+#     respectively, that is unmatched. \cr
+#   `$matches` \tab The new match matrix, after rematching. \cr
+#   `$totalPayoffDiff` \tab The difference in total payoffs before and after
+#     rematching. This is referred to in the paper as the maximum of the contribution interval.
+# }
 calcRemoveResults <- function(stream) {
     stopifnot(stream == "U" || stream == "D")
     removeTable <- if (stream == "U") removeu else removed
@@ -312,19 +312,19 @@ if (useStoredMatch) {
 v1u <- v1[v1$originalmatch == 1 & v1$removeU == 1, ]
 v1d <- v1[v1$originalmatch == 1 & v1$removeD == 1, ]
 
-#' Append columns to output table
-#'
-#' When the upstream functionality is chosen, the rows of `removeu` with
-#' market index equal to the chosen market index `exportMIdx` are selected. For
-#' each upstream index in those rows, a new column for `v2` is created. Each
-#' entry of that column is the value of the new match matrix, after rematching,
-#' for the corresponding market-upstream-downstream index. The column header is
-#' of the form `"{U, mIdx, uIdx}"`, where `mIdx` and `uIdx` are replaced by the
-#' market and upstream indices of the removed upstream. The procedure for the
-#' downstream functionality is similar.
-#'
-#' @param stream `"U"` for upstreams, `"D"` for downstreams.
-#' @return `NULL`
+# Append columns to output table
+#
+# When the upstream functionality is chosen, the rows of `removeu` with
+# market index equal to the chosen market index `exportMIdx` are selected. For
+# each upstream index in those rows, a new column for `v2` is created. Each
+# entry of that column is the value of the new match matrix, after rematching,
+# for the corresponding market-upstream-downstream index. The column header is
+# of the form `"{U, mIdx, uIdx}"`, where `mIdx` and `uIdx` are replaced by the
+# market and upstream indices of the removed upstream. The procedure for the
+# downstream functionality is similar.
+#
+# @param stream `"U"` for upstreams, `"D"` for downstreams.
+# @return `NULL`
 appendColumns <- function(stream) {
     stopifnot(stream == "U" || stream == "D")
     removeResults <- if (stream == "U") removeResultsU else removeResultsD
