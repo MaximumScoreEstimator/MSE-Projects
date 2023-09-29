@@ -4,9 +4,9 @@
 We provide the following information to replicate the results in the paper: 
 1.	Data files
 
-`stars_replication_step1`: Anonymized data on “PI-constellation” collaborations (matches). An observation is a tuple of {market identifier, PI identifier, Constellation identifier, Match indicator}. PIs are denoted as upstream agents; constellations as donwstream agents. Data (variables, structure) is described in Sections 3.2 and 4.1 of the paper. 
+`stars_replication_step1.dat`: Anonymized data on “PI-constellation” collaborations (matches). An observation is a tuple of {market identifier, PI identifier, Constellation identifier, Match indicator}. PIs are denoted as upstream agents; constellations as donwstream agents. Data (variables, structure) is described in Sections 3.2 and 4.1 of the paper. 
 
-`stars_replication_step2`: This file is an extension of `stars_replication_step1`. Relative to that file, it contains two additional columns (removeup and removedown). These variables take the value of 1 for the upstream, respectively, downstream agents whose contribution intervals need to be calculated. 
+`stars_replication_step2.dat`: This file is an extension of `stars_replication_step1.dat`. Relative to that file, it contains two additional columns (removeup and removedown). These variables take the value of 1 for the upstream, respectively, downstream agents whose contribution intervals need to be calculated. 
 
 `savedGroupsReplication.m`: Contains the list of 2500 subsamples used for generating the 95% confidence intervals in the paper. 
 
