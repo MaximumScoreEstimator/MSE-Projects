@@ -281,6 +281,8 @@ for (mIdx in seq_len(matchedData$noM)) {
             } else {
                 removeResultsD[[idxs[1]]]$totalPayoffDiff
             }
+            urmax <- max(0, urmax)
+            drmax <- max(0, drmax)
             urmin <- max(0, payoff - drmax)
             drmin <- max(0, payoff - urmax)
             row <- list(
