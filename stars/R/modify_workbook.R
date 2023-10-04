@@ -31,11 +31,11 @@ library(maxscoreest)
 # * Each market/upstream/downstream triple should appear only once. These
 #   indices should have sorted and consecutive values, starting from `1`.
 # * The last three columns specify whether this triple is a match, and whether
-#   this upstream or downstream should be unmatched. 
+#   this upstream or downstream should be unmatched.
 #   These fields take values `0` or `1`.
 # * Each of the remaining columns in the middle corresponds to a matching covariate.
 #   Fields on these columns should be numerical.
-#  *The input file should always be sorted by marketid, upstreamid, downstreamid. 
+# * The input file should always be sorted by marketid, upstreamid, downstreamid.
 #   Note that the actual header names are not taken into account.
 
 # Path to the input file.
@@ -361,6 +361,18 @@ appendColumns <- function(stream) {
 }
 appendColumns("U")
 appendColumns("D")
+
+################################################################################
+
+################################################################################
+# Report number of instances where min exceeds max.
+
+print(sprintf(
+    "Number of instances where urmin > drmax: %d",
+    sum(v1[, "urmin"] > v1[, "drmax"], na.rm = TRUE)))
+print(sprintf(
+    "Number of instances where drmin > urmax: %d",
+    sum(v1[, "drmin"] > v1[, "urmax"], na.rm = TRUE)))
 
 ################################################################################
 
