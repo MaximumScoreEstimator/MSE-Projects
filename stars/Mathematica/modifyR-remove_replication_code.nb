@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[    150103,       3455]
-NotebookOptionsPosition[    147011,       3351]
-NotebookOutlinePosition[    147483,       3369]
-CellTagsIndexPosition[    147440,       3366]
+NotebookDataLength[    150608,       3468]
+NotebookOptionsPosition[    147517,       3364]
+NotebookOutlinePosition[    147989,       3382]
+CellTagsIndexPosition[    147946,       3379]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -3180,33 +3180,6 @@ Cell[BoxData[{
            RowBox[{"[", "m", "]"}], "]"}]}], "}"}]}], "]"}], ",", "2"}], 
      "]"}]}], ";"}], "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
  RowBox[{
-  RowBox[{"Print", "[", 
-   RowBox[{"\"\<Number of instances where urmin > drmax: \>\"", ",", " ", 
-    RowBox[{"Count", "[", 
-     RowBox[{"data", ",", 
-      RowBox[{
-       RowBox[{"{", 
-        RowBox[{"__", ",", "urmax_", ",", 
-         RowBox[{"drmax_", "?", "NumberQ"}], ",", 
-         RowBox[{"urmin_", "?", "NumberQ"}], ",", "drmin_"}], "}"}], "/;", 
-       RowBox[{"urmin", ">", "drmax"}]}], ",", 
-      RowBox[{"{", "1", "}"}]}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
- RowBox[{
-  RowBox[{
-   RowBox[{"Print", "[", 
-    RowBox[{"\"\<Number of instances where drmin > urmax: \>\"", ",", " ", 
-     RowBox[{"Count", "[", 
-      RowBox[{"data", ",", 
-       RowBox[{
-        RowBox[{"{", 
-         RowBox[{"__", ",", 
-          RowBox[{"urmax_", "?", "NumberQ"}], ",", "drmax_", ",", "urmin_", 
-          ",", 
-          RowBox[{"drmin_", "?", "NumberQ"}]}], "}"}], "/;", 
-        RowBox[{"drmin", ">", "urmax"}]}], ",", 
-       RowBox[{"{", "1", "}"}]}], "]"}]}], "]"}], ";"}], 
-  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
- RowBox[{
   RowBox[{
    RowBox[{"v1", "=", 
     RowBox[{"Transpose", "@", 
@@ -3214,6 +3187,45 @@ Cell[BoxData[{
       RowBox[{
        RowBox[{"Transpose", "@", "data"}], ",", 
        RowBox[{"Transpose", "@", "removes"}]}], "]"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{"Print", "[", 
+   RowBox[{
+   "\"\<Number of instances where urmin > drmax: \>\"", ",", 
+    "\[IndentingNewLine]", 
+    RowBox[{"Count", "[", 
+     RowBox[{"v1", ",", 
+      RowBox[{
+       RowBox[{"{", 
+        RowBox[{"__", ",", "originalmatch_", ",", "urmax_", ",", 
+         RowBox[{"drmax_", "?", "NumberQ"}], ",", 
+         RowBox[{"urmin_", "?", "NumberQ"}], ",", "drmin_", ",", "removeU_", 
+         ",", "removeD_"}], "}"}], "/;", 
+       RowBox[{
+        RowBox[{"originalmatch", "\[Equal]", "1"}], "&&", 
+        RowBox[{"removeU", "\[Equal]", "1"}], "&&", 
+        RowBox[{"urmin", ">", "drmax"}]}]}], ",", 
+      RowBox[{"{", "1", "}"}]}], "]"}]}], "]"}], ";"}], "\[IndentingNewLine]", 
+ RowBox[{
+  RowBox[{
+   RowBox[{"Print", "[", 
+    RowBox[{
+    "\"\<Number of instances where drmin > urmax: \>\"", ",", 
+     "\[IndentingNewLine]", 
+     RowBox[{"Count", "[", 
+      RowBox[{"v1", ",", 
+       RowBox[{
+        RowBox[{"{", 
+         RowBox[{"__", ",", "originalmatch_", ",", 
+          RowBox[{"urmax_", "?", "NumberQ"}], ",", "drmax_", ",", "urmin_", 
+          ",", 
+          RowBox[{"drmin_", "?", "NumberQ"}], ",", "removeU_", ",", 
+          "removeD_"}], "}"}], "/;", 
+        RowBox[{
+         RowBox[{"originalmatch", "\[Equal]", "1"}], "&&", 
+         RowBox[{"removeD", "\[Equal]", "1"}], "&&", 
+         RowBox[{"drmin", ">", "urmax"}]}]}], ",", 
+       RowBox[{"{", "1", "}"}]}], "]"}]}], "]"}], ";"}], 
   "\[IndentingNewLine]", "\[IndentingNewLine]", 
   RowBox[{"(*", 
    RowBox[{
@@ -3345,7 +3357,8 @@ Cell[BoxData[{
    3.903867270226173*^9}, {3.9038673029935417`*^9, 3.9038673091434298`*^9}, 
    3.903867367531973*^9, 3.9038680770253572`*^9, {3.904342933160407*^9, 
    3.904342974642146*^9}, {3.9049706546528053`*^9, 3.904970669761735*^9}, {
-   3.905410666499625*^9, 3.9054106717979636`*^9}},
+   3.905410666499625*^9, 3.9054106717979636`*^9}, {3.9054740829009314`*^9, 
+   3.9054741584998436`*^9}},
  ExpressionUUID -> "2c39fb3f-7167-482b-a25a-df300d880eb9"]
 }, Open  ]]
 },
@@ -3395,7 +3408,7 @@ Cell[CellGroupData[{
 Cell[18077, 471, 2309, 57, 244, "Input"],
 Cell[20389, 530, 23570, 549, 448, "Output"]
 }, Open  ]],
-Cell[43974, 1082, 4467, 69, 100, "Input"],
+Cell[43974, 1082, 4467, 69, 80, "Input"],
 Cell[CellGroupData[{
 Cell[48466, 1155, 578, 10, 42, "Subsubsection"],
 Cell[CellGroupData[{
@@ -3455,7 +3468,7 @@ Cell[131852, 2987, 179, 4, 36, "Output"]
 Cell[CellGroupData[{
 Cell[132080, 2997, 426, 9, 52, "Subsection"],
 Cell[132509, 3008, 2362, 34, 220, "Text"],
-Cell[134874, 3044, 12121, 304, 796, "Input"]
+Cell[134874, 3044, 12627, 317, 842, "Input"]
 }, Open  ]]
 }
 ]
