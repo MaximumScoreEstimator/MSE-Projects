@@ -369,10 +369,10 @@ appendColumns("D")
 
 print(sprintf(
     "Number of instances where urmin > drmax: %d",
-    sum(v1[, "urmin"] > v1[, "drmax"], na.rm = TRUE)))
+    sum(v1[, "originalmatch"] == 1 & v1[, "removeU"] == 1 & v1[, "urmin"] > v1[, "drmax"], na.rm = TRUE)))
 print(sprintf(
     "Number of instances where drmin > urmax: %d",
-    sum(v1[, "drmin"] > v1[, "urmax"], na.rm = TRUE)))
+    sum(v1[, "originalmatch"] == 1 & v1[, "removeD"] == 1 & v1[, "drmin"] > v1[, "urmax"], na.rm = TRUE)))
 
 ################################################################################
 
