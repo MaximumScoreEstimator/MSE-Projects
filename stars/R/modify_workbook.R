@@ -44,12 +44,12 @@ ifname <- "../data/stars_replication_step2.dat"
 # * The optimal parameters *
 # Attention, for reproducibility reasons, we provide the estimates obtained in Mathematica
 pointEstimate <- c(
-    0.06642024971697014,
-    4.981905468469215,
-    -2.4016513033944378,
-    2.76088191399337,
-    1.3983116175519597,
-    1.2889501155821126)
+  0.8647185894805215,
+  5.779401410940838,
+  -2.6456032704736994,
+  3.3901711331785256,
+  1.6199736480992488 ,
+  2.0775031924093352)
 
 # *The index of the market to be exported after removing some agents and rematching the existing ones*
 # This allows the user to inspect how the remaining agents rematch after some disappear from the market
