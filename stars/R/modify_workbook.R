@@ -48,7 +48,7 @@ pointEstimate <- c(
   5.779401410940838,
   -2.6456032704736994,
   3.3901711331785256,
-  1.6199736480992488 ,
+  1.6199736480992488,
   2.0775031924093352)
 
 # *The index of the market to be exported after removing some agents and rematching the existing ones*
